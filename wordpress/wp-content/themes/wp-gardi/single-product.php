@@ -51,55 +51,63 @@
                                             <div class="fotorama__wrap fotorama__wrap_style_fade" style="width: 268px; height: 339px;">
                                                 <div class="fotorama__noise"></div>
                                                 <div class="fotorama__shaft" style="width: 268px; height: 339px;">
-                                                    <div class="fotorama__state" style="left: 134px; opacity: 0;">
-                                                        <svg viewBox="0 0 32 32">
-                                                            <g fill="none" stroke="#808080" stroke-width="2">
-                                                                <circle cx="16" cy="16" r="13"></circle>
-                                                                <line x1="7" y1="7" x2="25" y2="25"></line>
-                                                            </g>
-                                                        </svg>
-                                                    </div>
-                            <div class="fotorama__frame">
-                                    <?php $images = get_field('gallery');
-                                if( $images ): ?>
 
+                            <div class="fotorama__frame">
+                                    <?php $images = get_field('gallery');if( $images ): ?>
                                     <?php foreach( $images as $image ): ?>
-
-                            </div>
                             <div class="fotorama__frame" >
-                            <img src="<?php echo $image['sizes']['thumbnail']; ?>" alt="<?php echo $image['alt']; ?>">
-                            <?php endforeach; ?>
-                            </div>
-                            <div class="fotorama__frame">
-<img src="<?php echo $image['sizes']['thumbnail']; ?>" alt="<?php echo $image['alt']; ?>">
-                            </div>
-                             <div class="fotorama__frame fotorama__frame_active">
-<img src="<?php echo $image['sizes']['thumbnail']; ?>" alt="<?php echo $image['alt']; ?>">
-                             </div>
+                              <img src="<?php echo $image['sizes']['thumbnail']; ?>" alt="<?php echo $image['alt']; ?>">
                             </div>
                             <?php echo $image['caption']; ?>
+
+
+
+<?php endforeach; ?>
+                            </div>
+
+
+                            </div>
+
+
+
                             <?php endif; ?>
                                 <i class="fotorama__arr fotorama__arr_prev">◀</i><i class="fotorama__arr fotorama__arr_next">▶</i>
-                                                <p class="fotorama__caption fotorama__caption_overlay" style="display: none;"></p>
+
                                             </div>
 
                                             <div class="fotorama__thumbs" style="visibility: visible; width: 268px;">
-                                                <div class="fotorama__thumbs-shaft"><i class="fotorama__thumb"><i class="fotorama__thumb__dot"></i></i><i class="fotorama__thumb"><i class="fotorama__thumb__dot"></i></i><i class="fotorama__thumb"><i class="fotorama__thumb__dot"></i></i><i class="fotorama__thumb fotorama__thumb_selected"><i class="fotorama__thumb__dot"></i></i>
+
+                                                <div class="fotorama__thumbs-shaft">
+      <?php $images = get_field('gallery');if( $images ): ?>
+                                    <?php foreach( $images as $image ): ?>
+                                                <i class="fotorama__thumb">
+                                                  <i class="fotorama__thumb__dot"></i>
+                                                </i>
+
+                                           <?php endforeach; ?>
+<?php endif; ?>
+
                                                 </div>
                                             </div>
                                         </div>
+
+
                                         <script type="text/javascript" src="js/fotorama.js"></script>
                                         <script type="text/javascript">
                                         jQuery(document).ready(function($) {
-                                            images = [{
-                                                "img": "\/assets\/photo\/nursery-plants\/trees-and-shrubs\/coniferous-trees-and-shrubs\/yel-golubaya-bialobok\/gallery\/yel-golubaya-bialobok-right-01.jpg"
-                                            }, {
-                                                "img": "\/assets\/photo\/nursery-plants\/trees-and-shrubs\/coniferous-trees-and-shrubs\/yel-golubaya-bialobok\/gallery\/yel-golubaya-bialobok-right-02.jpg"
-                                            }, {
-                                                "img": "\/assets\/photo\/nursery-plants\/trees-and-shrubs\/coniferous-trees-and-shrubs\/yel-golubaya-bialobok\/gallery\/yel-golubaya-bialobok-right-03.jpg"
-                                            }, {
-                                                "img": "\/assets\/photo\/nursery-plants\/trees-and-shrubs\/coniferous-trees-and-shrubs\/yel-golubaya-bialobok\/gallery\/yel-golubaya-bialobok-right-04.jpg"
-                                            }];
+                                            images = [
+
+      <?php $images = get_field('gallery');if( $images ): ?>
+                                    <?php foreach( $images as $image ): ?>
+
+                                            {
+                                                "img": "<?php echo $image['sizes']['thumbnail']; ?>"
+                                            },
+
+                                           <?php endforeach; ?>
+                                           <?php endif; ?>
+
+];
                                             if (jQuery.isArray(images)) {
                                                 $("#gallery").fotorama({
                                                     data: images,
@@ -132,9 +140,9 @@
                                             </tr>
                                             <tr>
                                                 <td>
-                                                <?php the_field('height_of_adult_plant');?>
+                                                <?php the_field('height');?>
                                                 </td>
-                                            <td><?php the_field('diameter_of_adult_plant');?></td>
+                                            <td><?php the_field('diametr');?></td>
                                                 <td><?php the_field('price');?>
                                                     <span itemprop="price" style="display:none">570</span>
                                                     <span style="display:none;" itemprop="availability" content="in_stock">В наличии</span>
@@ -286,4 +294,4 @@
                 <div class="text-niz-print">
                     <p>Гарди. Питомник декоративных растений. <span class="print-margin-text"> ул. Рокоссовского, 64б, г. Кременчуг, Полтавская область.</span> www.gardi.biz</p>
                 </div>
-                <?php get_footer(); ?>
+  <?php get_footer(); ?>

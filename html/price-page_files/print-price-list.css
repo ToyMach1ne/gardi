@@ -1,0 +1,139 @@
+.footer
+{
+    display: none;
+}
+
+table caption
+{
+    font-size: 23px;
+}
+
+.prays_list
+{
+    -webkit-box-shadow: 0px 0px 0px #B1B1B1;
+    box-shadow: 0px 0px 0px;
+}
+
+.print-button-for-price
+{
+    display: none;
+}
+
+.title-table
+{
+	font-size: 21px !important;
+    color: black !important;
+}
+
+dl dt,dd
+{
+    color: black;
+}
+
+.pricing-date span
+{
+    color: black;
+}
+
+.page-title
+{
+    color: black;
+}
+
+.center
+{
+    font-size: 18px;
+    color: black;
+}
+
+.title-table
+{
+    color: black !important;
+}
+
+.pricing-date
+{
+    color: black !important;
+}
+
+.a11
+{
+    display: block;
+    position: relative;
+    width: 250px;
+    margin: 0;
+    left: 360px;
+}
+
+
+.view_from_above
+{
+    display: none;
+}
+
+
+.blok-header-nav1
+{
+    display: none;
+}
+
+.category-menu 
+{
+    display: none;
+}
+
+.header_menu
+{
+    display: none;
+}
+
+.prajs
+{
+    display: none;
+}
+
+
+.print_button
+{
+    display: none;
+}
+
+.footer_ie 
+{
+    display: none;
+}
+
+.dip_inform_print
+{
+    display: none;
+}
+
+
+table tr td, table tr td a
+{
+    color: #000000;
+    font-size: 22px;
+    padding: 5px;
+}
+
+
+
+.style_table tbody tr  
+{ 
+	page-break-inside:avoid;
+	page-break-before:auto;
+}
+
+table
+{
+	page-break-inside:auto;
+	width: 970px !important;
+
+}
+
+.content{
+	width: 100% !important;
+}
+
+
+

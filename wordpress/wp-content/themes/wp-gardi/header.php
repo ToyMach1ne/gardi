@@ -3,7 +3,7 @@
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <script type="text/javascript" async="" src="<?php echo get_template_directory_uri(); ?>/js/code.js"></script>
-    <title><?php the_title(); ?></title>
+    <title><?php bloginfo("name"); ?></title>
     <link rel="stylesheet" type="text/css" href="<?php echo get_template_directory_uri(); ?>/css/reset.css">
     <link rel="stylesheet" type="text/css" href="<?php echo get_template_directory_uri(); ?>/css/style.css">
     <link rel="stylesheet" type="text/css" href="<?php echo get_template_directory_uri(); ?>/css/media-query.css">
@@ -2459,7 +2459,8 @@
                 <div class="blok-header-nav1">
                     <div class="center-content-wrapper">
                         <div class="branding-nav-wrapper">
-                            <a href="http://www.gardi.biz/"><img src="<?php echo get_template_directory_uri(); ?>/img/gardi-logotype.png" class="gardi-logo" alt="Gardi logo"></a>
+                            <a href="<?php echo home_url(); ?>"><img src="<?php echo get_template_directory_uri(); ?>/img/gardi-logotype.png" class="gardi-logo" alt="logo"></a>
+
                             <ul class="header-nav">
                                 <li class="first active">
                                     <a href="#" title="О компании" class="header-nav-element">

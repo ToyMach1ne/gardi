@@ -1,0 +1,48 @@
+@media screen and (max-width: 1280px) {
+
+    .content {
+        width: 1024px;
+    }
+
+    .blok-header-nav1{
+        width: 1024px;
+    }
+    .gardi-advertisement {
+        margin-left: 400px;
+        margin-top: 95px;
+        /*top: 250px;*/
+    }
+	.b-center__description{
+		width: 840px;
+	}
+	.b-form__sale{
+		width:778px;
+	}
+	.b-center__description .input-box input{
+		width: 209px;
+	}
+	.b-center__description textarea{
+		width: 469px;
+	}
+	.error{
+		font-size:11px;
+	}
+	.input-box{
+		width:230px;
+	}
+	.b-some-text{
+		width: 455px;
+	}
+}
+
+@media screen and (max-width: 1040px) {
+
+    .content {
+        width: 1009px;
+    }
+
+    .blok-header-nav1{
+        width: 1009px;
+    }
+
+}
