@@ -99,7 +99,7 @@ function wpeHeadNav() {
     'container'       => 'div',
     'container_class' => 'menu-{menu slug}-container',
     'container_id'    => '',
-    'menu_class'      => 'menu',
+    'menu_class'      => 'header-nav',
     'menu_id'         => '',
     'echo'            => true,
     'fallback_cb'     => 'wp_page_menu',
@@ -681,7 +681,7 @@ function post_type_product() {
     'publicly_queryable' => true,
     'capability_type' => 'post',
     'hierarchical' => false,
-    'supports' => array('title','editor','thumbnail'),
+    'supports' => array('title','editor','thumbnail','excerpt','comments'),
     'has_archive' => true,
     'rewrite' => array( 'slug' => 'product' ),
     // https://developer.wordpress.org/resource/dashicons/
@@ -691,6 +691,8 @@ function post_type_product() {
 
   register_post_type( 'product' , $args );
 }
+
+
 
 
 

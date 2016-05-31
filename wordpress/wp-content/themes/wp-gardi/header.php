@@ -2460,76 +2460,8 @@
                     <div class="center-content-wrapper">
                         <div class="branding-nav-wrapper">
                             <a href="<?php echo home_url(); ?>"><img src="<?php echo get_template_directory_uri(); ?>/img/gardi-logotype.png" class="gardi-logo" alt="logo"></a>
+                <?php wpeHeadNav() ?>
 
-                            <ul class="header-nav">
-                                <li class="first active">
-                                    <a href="#" title="О компании" class="header-nav-element">
-             О питомнике
-         </a>
-                                </li>
-                                <li>
-                                    <a href="# title="Деревья и кустарники" class="header-nav-element">
-             Деревья и кустарники
-         </a>
-                                    <ul class="header-nav">
-                                        <li class="first">
-                                            <a href="#" title="Хвойные деревья и кустарники" class="header-nav-element">
-             Плодовые деревья
-         </a>
-                                        </li>
-                                        <li>
-                                            <a href="#" title="Лиственные деревья" class="header-nav-element">
-             Плодовые кустарники
-         </a>
-                                        </li>
-                                        <li   class="last">
-                                            <a href="#" title="Вьющиеся  растения" class="header-nav-element">
-             Декоративные
-         </a>
-                                        </li>
-
-                                    </ul>
-                                </li>
-                                <li>
-                                    <a href="#" title="Прайс-лист" class="header-nav-element">
-            Видео уроки
-        </a>
-                             </li>
-
-                                <li>
-                                    <a href="#" title="Прайс-лист" class="header-nav-element">
-             Прайс-лист
-         </a>
-                                    <ul class="header-nav">
-                                        <li class="first" id="trees-links">
-                                            <a href="#" title="Лиственные деревья" class="header-nav-element">
-             Плодовые деревья
-         </a>
-                                        </li>
-                                        <li>
-                                            <a href="http://www.gardi.biz/price-list/deciduous-shrubs" title="Лиственные кустарники" class="header-nav-element">
-             Плодовые кустарники
-         </a>
-                                        </li>
-                                        <li>
-                                            <a href="http://www.gardi.biz/price-list/coniferous-trees-and-shrubs" title="Хвойные растения" class="header-nav-element">
-             Декоративные
-         </a>
-                                        </li>
-
-                                    </ul>
-                                </li>
-                                <li>
-                                    <a href="http://www.gardi.biz/contacts" title="Контакты" class="header-nav-element">
-             Контакты
-         </a>
-                                </li>
-                                <li class="last" id="shop-gardi">
-                                    <a href="http://shop.gardi.biz/" title="Интернет-магазин" class="header-nav-element">
-             Интернет-магазин
-         </a>
-                                </li>
-                            </ul>
                         </div>
                     </div>
                 </div>
