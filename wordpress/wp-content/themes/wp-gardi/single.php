@@ -18,8 +18,8 @@
                                 <?php query_posts(array( 'post_type' => 'product','showposts' => 100 ) ); ?>
                                 <?php while (have_posts()) : the_post(); ?>
                             <h2 class="plant-thumb">
-                            <a href="<?php the_permalink() ?>"><?php the_title(); ?></a>
-                              <?php the_post_thumbnail('thumbnail'); ?>
+                            <a href="<?php the_permalink() ?>"><?php the_title(); ?>
+                              <?php the_post_thumbnail('thumbnail'); ?></a>
                                     <p><?php echo get_the_excerpt(); ?></p>
                             </h2>
 

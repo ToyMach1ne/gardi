@@ -2,7 +2,6 @@
 <html <?php language_attributes(); ?> class="no-js">
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-    <script type="text/javascript" async="" src="<?php echo get_template_directory_uri(); ?>/js/code.js"></script>
     <title><?php bloginfo("name"); ?></title>
     <link rel="stylesheet" type="text/css" href="<?php echo get_template_directory_uri(); ?>/css/reset.css">
     <link rel="stylesheet" type="text/css" href="<?php echo get_template_directory_uri(); ?>/css/style.css">
@@ -15,17 +14,9 @@
     <link rel="apple-touch-icon" sizes="114x114" href="http://www.gardi.biz/apple-touch-icon-114.png">
     <link rel="apple-touch-icon" sizes="72x72" href="http://www.gardi.biz/apple-touch-icon-72.png">
     <link rel="apple-touch-icon" sizes="144x144" href="http://www.gardi.biz/apple-touch-icon-144.png">
-    <script async="" src="<?php echo get_template_directory_uri(); ?>/js/gtm.js"></script>
-    <script src="<?php echo get_template_directory_uri(); ?>/js/jquery-1.8.2.min.js"></script>
     <link href="<?php echo get_template_directory_uri(); ?>/css/fotorama.css" rel="stylesheet">
     <link href="<?php echo get_template_directory_uri(); ?>/css/font-awesome.css" rel="stylesheet">
-    <script type="text/javascript" language="javascript" src="<?php echo get_template_directory_uri(); ?>/js/fotorama.js"></script>
-    <style type="text/css"></style>
-    <script type="text/javascript" language="javascript" src="<?php echo get_template_directory_uri(); ?>/js/jquery.carouFredSel-6.2.1-packed.js"></script>
-    <script type="text/javascript" language="javascript" src="<?php echo get_template_directory_uri(); ?>/js/jquery.touchSwipe.min.js"></script>
-    <script type="text/javascript" language="javascript" src="<?php echo get_template_directory_uri(); ?>/js/jquery.mousewheel.min.js"></script>
-    <script type="text/javascript" language="javascript" src="<?php echo get_template_directory_uri(); ?>/js/jquery.transit.min.js"></script>
-    <script type="text/javascript" language="javascript" src="<?php echo get_template_directory_uri(); ?>/js/jquery.ba-throttle-debounce.min.js"></script>
+
  <!--[if lt IE 9]>
     <script type="text/javascript" src="<?php echo get_template_directory_uri(); ?>/js/html5shiv.js"></script>
     <script type="text/javascript" src="<?php echo get_template_directory_uri(); ?>/js/selectivizr.js"></script>
@@ -37,48 +28,6 @@
 
 
 
-    <script type="text/javascript">
-    $(document).ready(function() {
-
-        $("#carousel-of-news").carouFredSel({
-            infinite: false,
-            direction: "up",
-            circular: true,
-            auto: {
-                items: 1,
-                duration: 2000
-            },
-            scroll: {
-                items: 1,
-                duration: 2000
-            },
-
-            prev: {
-                button: "#carousel-of-news_prev",
-                key: "down"
-            },
-            next: {
-                button: "#carousel-of-news_next",
-                key: "up"
-            },
-            pagination: "#carousel-of-news_pag"
-        });
-
-        //  var $scrollingDiv = $(".gardi-advertisement");
-        //  if($scrollingDiv.height() !== null) {
-        //     $scrollingDiv.sticky({topSpacing:65});
-        //  }
-
-    });
-    </script>
-    <!--
-    <script type="text/javascript" language="javascript" src="assets/js/snow.js"></script>
-    <script>
-        $(document).ready( function(){
-            $.fn.snow({ minSize: 5, maxSize: 50, newOn: 500, flakeColor: 'white' });
-        });
-    </script>
-    -->
     <style type="text/css"></style>
     <style type="text/css" id="consultsystems_style">
     .consultsystems {
@@ -2472,7 +2421,7 @@
                             <div class="fotorama__shaft" style="width: 1280px; height: 455px; cursor: pointer;">
                                 <div class="fotorama__state" style="opacity: 0;">
                                     <svg viewBox="0 0 32 32">
-                                        <g fill="none" stroke="#808080" stroke-width="2">
+                                    <g fill="none" stroke="#808080" stroke-width="2">
                                             <circle cx="16" cy="16" r="13"></circle>
                                             <line x1="7" y1="7" x2="25" y2="25"></line>
                                         </g>
@@ -2488,7 +2437,84 @@
                             <p class="fotorama__caption fotorama__caption_overlay" style="display: none;"></p>
                         </div>
                     </div>
-                    <script type="text/javascript" src="<?php echo get_template_directory_uri(); ?>/js/fotorama.js"></script>
+
+                    <div class="sisea-search-form-container">
+                        <div class="center-content-wrapper">
+                            <form class="sisea-search-form" action="http://www.gardi.biz/search" method="get">
+                                <fieldset>
+                                    <label for="search">Поиск по сайту:</label>
+                                    <input type="text" name="search" id="search" value="">
+                                    <input type="hidden" name="id" value="351">
+                                </fieldset>
+                                <div id="site-search-results" class="search-results search-results-on-main"></div>
+                            </form>
+                            <div class="b-header-social">
+                                <div id="fb-root" class=" fb_reset">
+                                    <div style="position: absolute; top: -10000px; height: 0px; width: 0px;">
+                                        <div>
+
+                                        </div>
+                                    </div>
+                                    <div style="position: absolute; top: -10000px; height: 0px; width: 0px;">
+                                        <div></div>
+                                    </div>
+                                </div>
+
+
+
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+<script async="" src="<?php echo get_template_directory_uri(); ?>/js/gtm.js"></script>
+    <script src="<?php echo get_template_directory_uri(); ?>/js/jquery-1.8.2.min.js"></script>
+
+    <script type="text/javascript" language="javascript" src="<?php echo get_template_directory_uri(); ?>/js/fotorama.js"></script>
+    <style type="text/css"></style>
+    <script type="text/javascript" language="javascript" src="<?php echo get_template_directory_uri(); ?>/js/jquery.carouFredSel-6.2.1-packed.js"></script>
+    <script type="text/javascript" language="javascript" src="<?php echo get_template_directory_uri(); ?>/js/jquery.touchSwipe.min.js"></script>
+    <script type="text/javascript" language="javascript" src="<?php echo get_template_directory_uri(); ?>/js/jquery.mousewheel.min.js"></script>
+    <script type="text/javascript" language="javascript" src="<?php echo get_template_directory_uri(); ?>/js/jquery.transit.min.js"></script>
+    <script type="text/javascript" language="javascript" src="<?php echo get_template_directory_uri(); ?>/js/jquery.ba-throttle-debounce.min.js"></script>
+
+
+    <script type="text/javascript">
+    $(document).ready(function() {
+
+        $("#carousel-of-news").carouFredSel({
+            infinite: true,
+            direction: "right",
+            circular: true,
+            auto: {
+                items: 1,
+                duration: 2000
+            },
+            scroll: {
+                items: 1,
+                duration: 2000
+            },
+
+            prev: {
+                button: "#carousel-of-news_prev",
+                key: "down"
+            },
+            next: {
+                button: "#carousel-of-news_next",
+                key: "up"
+            },
+            pagination: "#carousel-of-news_pag"
+        });
+
+        //  var $scrollingDiv = $(".gardi-advertisement");
+        //  if($scrollingDiv.height() !== null) {
+        //     $scrollingDiv.sticky({topSpacing:65});
+        //  }
+
+    });
+    </script>
+    <script type="text/javascript" src="<?php echo get_template_directory_uri(); ?>/js/fotorama.js"></script>
                     <script type="text/javascript">
                     jQuery(document).ready(function($) {
 
@@ -2566,45 +2592,6 @@
 
                     });
                     </script>
-                    <div class="sisea-search-form-container">
-                        <div class="center-content-wrapper">
-                            <form class="sisea-search-form" action="http://www.gardi.biz/search" method="get">
-                                <fieldset>
-                                    <label for="search">Поиск по сайту:</label>
-                                    <input type="text" name="search" id="search" value="">
-                                    <input type="hidden" name="id" value="351">
-                                </fieldset>
-                                <div id="site-search-results" class="search-results search-results-on-main"></div>
-                            </form>
-                            <div class="b-header-social">
-                                <div id="fb-root" class=" fb_reset">
-                                    <div style="position: absolute; top: -10000px; height: 0px; width: 0px;">
-                                        <div>
-
-                                        </div>
-                                    </div>
-                                    <div style="position: absolute; top: -10000px; height: 0px; width: 0px;">
-                                        <div></div>
-                                    </div>
-                                </div>
-                                <script>
-                                (function(d, s, id) {
-                                    var js, fjs = d.getElementsByTagName(s)[0];
-                                    if (d.getElementById(id)) return;
-                                    js = d.createElement(s);
-                                    js.id = id;
-                                    js.src = "//connect.facebook.net/ru_RU/sdk.js#xfbml=1&version=v2.5&appId=469457486472064";
-                                    fjs.parentNode.insertBefore(js, fjs);
-                                }(document, 'script', 'facebook-jssdk'));
-                                </script>
-                                <div class="fb-follow fb_iframe_widget" data-href="https://www.facebook.com/%D0%93%D0%B0%D1%80%D0%B4%D0%B8-%D0%9F%D0%B8%D1%82%D0%BE%D0%BC%D0%BD%D0%B8%D0%BA-%D1%80%D0%B0%D1%81%D1%82%D0%B5%D0%BD%D0%B8%D0%B9-%D0%9E%D1%80%D0%B0%D0%BD%D0%B6%D0%B5%D1%80%D0%B5%D1%8F-%D1%86%D0%B2%D0%B5%D1%82%D0%BE%D0%B2-600208133407620/" data-layout="button" data-show-faces="true" fb-xfbml-state="rendered" fb-iframe-plugin-query="app_id=469457486472064&amp;container_width=300&amp;href=https%3A%2F%2Fwww.facebook.com%2F%25D0%2593%25D0%25B0%25D1%2580%25D0%25B4%25D0%25B8-%25D0%259F%25D0%25B8%25D1%2582%25D0%25BE%25D0%25BC%25D0%25BD%25D0%25B8%25D0%25BA-%25D1%2580%25D0%25B0%25D1%2581%25D1%2582%25D0%25B5%25D0%25BD%25D0%25B8%25D0%25B9-%25D0%259E%25D1%2580%25D0%25B0%25D0%25BD%25D0%25B6%25D0%25B5%25D1%2580%25D0%25B5%25D1%258F-%25D1%2586%25D0%25B2%25D0%25B5%25D1%2582%25D0%25BE%25D0%25B2-600208133407620%2F&amp;layout=button&amp;locale=ru_RU&amp;sdk=joey&amp;show_faces=true"><span style="vertical-align: bottom; width: 99px; height: 20px;"></span></div>
-                                <a href="https://vk.com/gardi_biz" target="_blank" rel="nofollow" class="b-social-link b-social-link_vk" title="Питомник растений и оранжерея цветов в Вконтакте"></a>
-
-                                <a href="https://www.facebook.com/pages/%D0%93%D0%B0%D1%80%D0%B4%D0%B8-%D0%9F%D0%B8%D1%82%D0%BE%D0%BC%D0%BD%D0%B8%D0%BA-%D1%80%D0%B0%D1%81%D1%82%D0%B5%D0%BD%D0%B8%D0%B9-%D0%9E%D1%80%D0%B0%D0%BD%D0%B6%D0%B5%D1%80%D0%B5%D1%8F-%D1%86%D0%B2%D0%B5%D1%82%D0%BE%D0%B2/600208133407620" target="_blank" rel="nofollow" class="b-social-link b-social-link_fb" title="Питомник растений Гарди в Facebook"></a>
-                                <a href="https://www.youtube.com/channel/UCgylPRSqfD-JrDnm03_bZRA" target="_blank" rel="nofollow" class="b-social-link b-social-link_youtube" title="Ютуб канал"></a>
-                            </div>
-                        </div>
-                    </div>
                     <script>
                     var $ = jQuery.noConflict();
 
@@ -2630,4 +2617,3 @@
                         });
                     });
                     </script>
-                </div>
