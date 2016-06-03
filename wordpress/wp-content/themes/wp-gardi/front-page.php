@@ -7,90 +7,46 @@
                         <h1 class="page-title">Питомник растений и цветов</h1>
                         <h2 class="green-italic-title">Саженцы лиственных, хвойных деревьев и кустарников, клумбовые и комнатные цветы</h2>
                         <div class="gardi-thumbs-wrapper">
+                        <?php query_posts(array( 'post_type' => 'archive_product','showposts' => 3 ) ); ?>
+                            <?php while (have_posts()) : the_post(); ?>
                             <div class="gardi-thumb">
-                                <div class="top-img-thumb-wrapper">
-                                    <a href="http://www.gardi.biz/nursery" title="Питомник декоративных растений"><img src="<?php echo get_template_directory_uri(); ?>/img/green-garden.jpg" alt="Питомник декоративных растений" title="Питомник декоративных растений" class="main-gardi-thumb-img"></a>
+                              <div class="top-img-thumb-wrapper">
+                                  <a href="<?php the_permalink() ?>"><span><?php the_post_thumbnail('thumbnail'); ?></span></a>
                                     <img src="<?php echo get_template_directory_uri(); ?>/img/investing1a.png" alt="Иконка питомника" class="icon-gardi-thumb">
                                 </div>
                                 <div class="gardi-thumb-description">
-                                    <h2>Питомник декоративных растений</h2>
+                                  <a href="<?php the_permalink() ?>"><h2><?php the_title(); ?></h2></a>
+                                  <p><?php echo get_the_excerpt(); ?></p>
                                     <div class="contact-info-gardi-thumb">
-                                        <p>ул. Рокоссовского 64б, г. Кременчуг, обл. Полтавская, E-mail: <a href="mailto:nursery@gardi.biz">lopatinskii_sad@mail.ru</a></p>
-                                        <p> +380 67 775-27-48</p>
-
                                     </div>
                                     <ul>
-                                        <li>- лиственные деревья и кустарники</li>
-                                        <li>- хвойные деревья и кустарники</li>
-                                        <li>- вьющиеся растения</li>
+                                        <li><?php the_content(); ?></li>
                                     </ul>
-                                    <a href="http://www.gardi.biz/nursery" class="green-btn">Продукция питомника</a>
+                                    <a href="http://localhost:9090/lorem-ipsum-2.htm" class="green-btn">Продукция питомника</a>
                                 </div>
                             </div>
-                            <div class="gardi-thumb">
-                                <div class="top-img-thumb-wrapper">
-                                    <a href="http://www.gardi.biz/greenhouse" title="Оранжерея цветочных растений"><img src="<?php echo get_template_directory_uri(); ?>/img/greenhouse.jpg" alt="Оранжерея цветов" title="Оранжерея цветочных растений" class="main-gardi-thumb-img"></a>
-                                    <img src="<?php echo get_template_directory_uri(); ?>/img/investing3.png" alt="Иконка оранжереи" class="icon-gardi-thumb">
-                                </div>
-                                <div class="gardi-thumb-description">
-                                    <h2>Питомник плодовых растений</h2>
-                                    <div class="contact-info-gardi-thumb">
-                                        <p>ул. Портовая 4, г. Комсомольск, обл. Полтавская, E-mail: <a href="mailto:flowers@gardi.biz">lopatinskii_sad@mail.ru</a></p>
-                                        <p> +380 67 775-27-48</p>
-                                        <br>
-                                        <br>
-                                    </div>
-                                    <ul>
-                                        <li>- цветущие и горшечные комнатные цветы</li>
-                                        <li>- экзотические растения</li>
-                                        <li>- клумбовые и кашпо</li>
-                                    </ul>
-                                    <a href="http://www.gardi.biz/greenhouse" class="green-btn">Продукция оранжереи</a>
-                                </div>
-                            </div>
-                            <div class="gardi-thumb">
-                                <div class="top-img-thumb-wrapper">
-                                    <a href="http://shop.gardi.biz/" target="_blank" title="Интернет-магазин Гарди"><img src="<?php echo get_template_directory_uri(); ?>/img/gardi-shop-picture.jpg" alt="Интернет-магазин Гарди" title="Интернет-магазин Гарди" class="main-gardi-thumb-img"></a>
-                                    <img src="<?php echo get_template_directory_uri(); ?>/img/investing1a.png" alt="Интернет-магазин Гарди" class="icon-gardi-thumb">
-                                </div>
-                                <div class="gardi-thumb-description">
-                                    <h2>Интернет-магазин Растений</h2>
-                                    <div class="contact-info-gardi-thumb">
-                                        <p>Продажа саженцев деревьев
-                                            <br> и кустарников в Украине.</p>
-                                        <p>Растения с питомника</p>
-                                        <br>
-                                        <br>
-                                    </div>
-                                    <ul>
-                                        <li>- удобрения в подарок</li>
-                                        <li>- доставка растений почтой</li>
-                                        <li>- оптовые цены</li>
-                                    </ul>
-                                    <a href="http://shop.gardi.biz/" target="_blank" class="green-btn" title="Интернет-магазин саженцев">Интернет-магазин</a>
-                                </div>
-                            </div>
-                            <br>
-
+                          <?php endwhile;?>
+                          <?php wp_reset_query(); ?>
                         </div>
-                        <div class="clr"></div>
-                        <h3 class="bottom-title">Питомник Гарди осуществляет поставку саженцев растений, клумбовых и комнатных цветов в крупнейшие<br> торговые сети Украины. В настоящий период мы активно расширяем  ассортимент растений.</h3>
-                        <br>
-                        <br>
-                    </div>
                 </section>
                 <div class="clr"></div>
-                <section class="about-company right-side-image-block">
+
+              <section class="about-company right-side-image-block">
+                <?php $posts = get_field('product_descr'); if( $posts ): ?>
                     <div class="center-content-wrapper">
+                    <?php foreach( $posts as $p ): // variable must NOT be called $post (IMPORTANT) ?>
                         <div class="left-section-description">
-                            <h3>Оранжерея цветочных растений</h3>
-                            <p>Оранжерея цветочных растений спроектирована на основе передового немецкого и голландского опыта, занимает территории 3 гектара. Выращивание цветочной продукции производится с применением современных технологий в области растениеводства, используемых большинством европейских производителей.</p>
-                            <p>Наша оранжерея поддерживает тесные отношения с зарубежными партнерами из Польши, Нидерландов, Германии, Италии и является представителем на рынке Украины фирмы «Fisher» и «Rudy Raes».</p>
-                            <a href="http://www.gardi.biz/greenhouse" class="download-catalog">Подробнее об оранжерее</a>
+                        <a href="<?php echo get_permalink( $p->ID ); ?>" target="_blank">
+                            <h3><?php echo get_the_title( $p->ID ); ?></h3>
+                            <p><?php the_content(); ?></p>
+                          <a href="" class="download-catalog">Подробнее об оранжерее</a>
                         </div>
-                        <img src="<?php echo get_template_directory_uri(); ?>/img/greenhouse(1).jpg" alt="Оранжерея цветочных растений" title="Оранжерея цветочных растений" class="right-side-image">
+                        <img src="<?php echo wp_get_attachment_url( get_post_thumbnail_id( $p->ID, "medium" ) ); ?>" alt="">
+                        <?php endforeach; ?>
                     </div>
-                </section>
+                    <?php endif; ?>
+              </section>
+
                 <div class="clr"></div>
                 <section class="about-company top-garden">
                     <div class="center-content-wrapper">

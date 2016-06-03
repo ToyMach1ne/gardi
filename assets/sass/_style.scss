@@ -4431,6 +4431,12 @@ html {
   float: left;
 
   width: 100%;
+  span {
+    img {
+      width:305px;
+      height:200px;
+    }
+  }
 }
 
 .main-gardi-thumb-img {
@@ -4444,7 +4450,7 @@ html {
 
 .icon-gardi-thumb {
   position: absolute;
-  top: 128px;
+  top: 169px;
   left: 50%;
 
   margin-left: -32px;
@@ -4503,6 +4509,12 @@ html {
   font-size: 12px;
 
   color: #404040;
+}
+.top-img-thumb-wrapper {
+  span {
+    width:305px;
+    height:200px;
+  }
 }
 
 .news-big-img {
@@ -5613,4 +5625,13 @@ footer {
 
 #shop-gardi a:hover {
   background: #5caa45;
+}
+.about-company.right-side-image-block {
+  .center-content-wrapper {
+    img {
+      width:370px;
+      height:250px;
+      border-radius: 6px;
+    }
+  }
 }

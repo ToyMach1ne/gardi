@@ -691,9 +691,84 @@ function post_type_product() {
 
   register_post_type( 'product' , $args );
 }
+add_action( 'init', 'post_type_archive_product' );
+function post_type_archive_product() {
 
+  $labels = array(
+    'name' => 'archive_product',
+    'singular_name' => 'archive_product',
+    'add_new' => 'Add',
+    'add_new_item' => 'Add',
+    'edit' => 'Edit',
+    'edit_item' => 'Edit',
+    'new-item' => 'Add',
+    'view' => 'View',
+    'view_item' => 'View',
+    'search_items' => 'Search',
+    'not_found' => 'Not Found',
+    'not_found_in_trash' => 'Not Found',
+    'parent' => 'Parent'
+  );
 
+  $args = array(
+    'description' => 'archive_product Post Type',
+    'show_ui' => true,
+    'menu_position' => 5,
+    'exclude_from_search' => false,
+    'labels' => $labels,
+    'public' => true,
+    'publicly_queryable' => true,
+    'capability_type' => 'post',
+    'hierarchical' => false,
+    'supports' => array('title','editor','thumbnail','excerpt','comments'),
+    'has_archive' => true,
+    'rewrite' => array( 'slug' => 'archive_product' ),
+    // https://developer.wordpress.org/resource/dashicons/
+    'menu_icon' => 'dashicons-cart',
+    'show_in_rest' => true
+  );
 
+  register_post_type( 'archive_product' , $args );
+}
+add_action( 'init', 'post_type_product_descr' );
+function post_type_product_descr() {
+
+  $labels = array(
+    'name' => 'product_descr',
+    'singular_name' => 'product_descr',
+    'add_new' => 'Add',
+    'add_new_item' => 'Add',
+    'edit' => 'Edit',
+    'edit_item' => 'Edit',
+    'new-item' => 'Add',
+    'view' => 'View',
+    'view_item' => 'View',
+    'search_items' => 'Search',
+    'not_found' => 'Not Found',
+    'not_found_in_trash' => 'Not Found',
+    'parent' => 'Parent'
+  );
+
+  $args = array(
+    'description' => 'product_descr Post Type',
+    'show_ui' => true,
+    'menu_position' => 5,
+    'exclude_from_search' => false,
+    'labels' => $labels,
+    'public' => true,
+    'publicly_queryable' => true,
+    'capability_type' => 'post',
+    'hierarchical' => false,
+    'supports' => array('title','editor','thumbnail','excerpt','comments'),
+    'has_archive' => true,
+    'rewrite' => array( 'slug' => 'product_descr' ),
+    // https://developer.wordpress.org/resource/dashicons/
+    'menu_icon' => 'dashicons-edit',
+    'show_in_rest' => true
+  );
+
+  register_post_type( 'product_descr' , $args );
+}
 
 
 ?>

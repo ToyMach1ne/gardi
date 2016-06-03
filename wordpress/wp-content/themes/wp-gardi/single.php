@@ -1,7 +1,6 @@
 <?php /* Template Name: Single Page */  get_header(); ?>
 
 
-                </div>
                 <div class="background-inside-container">
                     <section class="about-company top-leaves">
                         <div class="center-content-wrapper">
