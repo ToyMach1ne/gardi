@@ -5635,3 +5635,18 @@ footer {
     }
   }
 }
+.about-company.top-garden {
+  .center-content-wrapper {
+    img {
+      width:370px;
+      height:250px;
+      border-radius: 6px;
+    }
+    .right-section-description {
+      float:right;
+    }
+  }
+}
+.owl-pagination {
+  display:none;
+}

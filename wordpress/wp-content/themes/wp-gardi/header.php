@@ -28,7 +28,7 @@
 
 
 
-    <style type="text/css"></style>
+
     <style type="text/css" id="consultsystems_style">
     .consultsystems {
         -khtml-opacity: 0;
@@ -2414,59 +2414,24 @@
                         </div>
                     </div>
                 </div>
-                <div class="unit-with-the-upper-gallery">
-                    <div id="mainGallery" data-width="100%" data-height="455" data-autoplay="true" class="fotorama fotorama_horizontal fotorama_shadows fotorama_csstransitions" style="overflow: hidden;">
-                        <div class="fotorama__wrap fotorama__wrap_style_fade fotorama__wrap_mouseout" style="width: 1280px; height: 455px;">
-                            <div class="fotorama__noise"></div>
-                            <div class="fotorama__shaft" style="width: 1280px; height: 455px; cursor: pointer;">
-                                <div class="fotorama__state" style="opacity: 0;">
-                                    <svg viewBox="0 0 32 32">
-                                    <g fill="none" stroke="#808080" stroke-width="2">
-                                            <circle cx="16" cy="16" r="13"></circle>
-                                            <line x1="7" y1="7" x2="25" y2="25"></line>
-                                        </g>
-                                    </svg>
-                                </div>
-                                <div class="fotorama__frame" style="visibility: visible; opacity: 0; display: block; width: 1280px; height: 455px;"><img src="<?php echo get_template_directory_uri(); ?>/img/panorama40.jpg" class="fotorama__img" width="1294" height="455" style="visibility: visible; width: 1294px; height: 455px; top: 0px; left: -7px;"></div>
-                                <div class="fotorama__frame" style="visibility: visible; opacity: 0; display: block; width: 1280px; height: 455px;"><img src="<?php echo get_template_directory_uri(); ?>/img/panorama41.jpg" class="fotorama__img" width="1294" height="455" style="visibility: visible; width: 1294px; height: 455px; top: 0px; left: -7px;"></div>
-                                <div class="fotorama__frame" style="visibility: visible; opacity: 0; display: block; width: 1280px; height: 455px;"><img src="<?php echo get_template_directory_uri(); ?>/img/panorama42.jpg" class="fotorama__img" width="1294" height="455" style="visibility: visible; width: 1294px; height: 455px; top: 0px; left: -7px;"></div>
-                                <div class="fotorama__frame fotorama__frame_active" style="visibility: visible; opacity: 1; display: block; width: 1280px; height: 455px;"><img src="<?php echo get_template_directory_uri(); ?>/img/panorama43.jpg" class="fotorama__img" width="1294" height="455" style="visibility: visible; width: 1294px; height: 455px; top: 0px; left: -7px;"></div>
-                                <div class="fotorama__frame" style="visibility: visible; opacity: 0; display: block; width: 1280px; height: 455px;"><img src="<?php echo get_template_directory_uri(); ?>/img/panorama44.jpg" class="fotorama__img" width="1294" height="455" style="visibility: visible; width: 1294px; height: 455px; top: 0px; left: -7px;"></div>
-                                <div class="fotorama__frame" style="visibility: visible; opacity: 0; display: block; width: 1280px; height: 455px;"><img src="<?php echo get_template_directory_uri(); ?>/img/panorama1.jpg" class="fotorama__img" width="1280" height="455" style="visibility: visible; width: 1280px; height: 455px; top: 0px; left: 0px;"></div>
-                            </div><i class="fotorama__arr fotorama__arr_prev fotorama__arr_hover" style="transition-duration: 1500ms;">◀</i><i class="fotorama__arr fotorama__arr_next" style="transition-duration: 1500ms;">▶</i>
-                            <p class="fotorama__caption fotorama__caption_overlay" style="display: none;"></p>
-                        </div>
-                    </div>
+<div id="demo">
+        <div class="container">
+          <div class="row">
+            <div class="span12">
+            <?php $images = get_field('gallery'); if( $images ): ?>
+              <div id="owl-demo" class="owlCarousel">
+              <?php $images = get_field('gallery'); if( $images ): foreach( $images as $image ): ?>
 
-                    <div class="sisea-search-form-container">
-                        <div class="center-content-wrapper">
-                            <form class="sisea-search-form" action="http://www.gardi.biz/search" method="get">
-                                <fieldset>
-                                    <label for="search">Поиск по сайту:</label>
-                                    <input type="text" name="search" id="search" value="">
-                                    <input type="hidden" name="id" value="351">
-                                </fieldset>
-                                <div id="site-search-results" class="search-results search-results-on-main"></div>
-                            </form>
-                            <div class="b-header-social">
-                                <div id="fb-root" class=" fb_reset">
-                                    <div style="position: absolute; top: -10000px; height: 0px; width: 0px;">
-                                        <div>
+                <div class="item"><?php echo home_url(); ?>"><img src="<?php echo $image['sizes']['large']; ?>" alt="<?php echo $image['alt']; ?>" /></div>
+                <?php endforeach; endif; ?>
 
-                                        </div>
-                                    </div>
-                                    <div style="position: absolute; top: -10000px; height: 0px; width: 0px;">
-                                        <div></div>
-                                    </div>
-                                </div>
+              </div>
+              <?php endif; ?>
+            </div>
+          </div>
+        </div>
+    </div>
 
-
-
-                            </div>
-                        </div>
-                    </div>
-
-                </div>
 
 <script async="" src="<?php echo get_template_directory_uri(); ?>/js/gtm.js"></script>
     <script src="<?php echo get_template_directory_uri(); ?>/js/jquery-1.8.2.min.js"></script>
@@ -2483,137 +2448,23 @@
     <script type="text/javascript">
     $(document).ready(function() {
 
-        $("#carousel-of-news").carouFredSel({
-            infinite: true,
-            direction: "right",
-            circular: true,
-            auto: {
-                items: 1,
-                duration: 2000
-            },
-            scroll: {
-                items: 1,
-                duration: 2000
-            },
+  $("#owl-demo").owlCarousel({
 
-            prev: {
-                button: "#carousel-of-news_prev",
-                key: "down"
-            },
-            next: {
-                button: "#carousel-of-news_next",
-                key: "up"
-            },
-            pagination: "#carousel-of-news_pag"
-        });
+      navigation : true, // Show next and prev buttons
+      slideSpeed : 300,
+      paginationSpeed : 400,
+      singleItem:true,
+      autoPlay:true,
+      slideSpeed:5000,
+      navigation:false,
+      items:4,
 
-        //  var $scrollingDiv = $(".gardi-advertisement");
-        //  if($scrollingDiv.height() !== null) {
-        //     $scrollingDiv.sticky({topSpacing:65});
-        //  }
 
-    });
+
+  });
+
+});
     </script>
-    <script type="text/javascript" src="<?php echo get_template_directory_uri(); ?>/js/fotorama.js"></script>
-                    <script type="text/javascript">
-                    jQuery(document).ready(function($) {
-
-                        images = [{
-                            "img": "\/assets\/panorama\/gardi-skidka-15.jpg",
-                            "caption": ""
-                        }, {
-                            "img": "\/assets\/panorama\/panorama12.jpg",
-                            "caption": ""
-                        }, {
-                            "img": "\/assets\/panorama\/panorama36.jpg",
-                            "caption": ""
-                        }, {
-                            "img": "\/assets\/panorama\/panorama37.jpg",
-                            "caption": ""
-                        }, {
-                            "img": "\/assets\/panorama\/panorama38.jpg",
-                            "caption": ""
-                        }, {
-                            "img": "\/assets\/panorama\/panorama39.jpg",
-                            "caption": ""
-                        }, {
-                            "img": "\/assets\/panorama\/panorama40.jpg",
-                            "caption": ""
-                        }, {
-                            "img": "\/assets\/panorama\/panorama41.jpg",
-                            "caption": ""
-                        }, {
-                            "img": "\/assets\/panorama\/panorama42.jpg",
-                            "caption": ""
-                        }, {
-                            "img": "\/assets\/panorama\/panorama43.jpg",
-                            "caption": ""
-                        }, {
-                            "img": "\/assets\/panorama\/panorama44.jpg",
-                            "caption": ""
-                        }, {
-                            "img": "\/assets\/panorama\/panorama35.jpg",
-                            "caption": ""
-                        }, {
-                            "img": "\/assets\/panorama\/panorama1.jpg",
-                            "caption": "\u0414\u0435\u043a\u043e\u0440\u0430\u0442\u0438\u0432\u043d\u044b\u0435 \u0446\u0432\u0435\u0442\u044b \u0438 \u0434\u0435\u0440\u0435\u0432\u044c\u044f<span>\u041f\u0440\u043e\u0434\u0430\u0436\u0430 \u0440\u0430\u0441\u0442\u0435\u043d\u0438\u0439, \u0446\u0432\u0435\u0442\u043e\u0447\u043d\u043e\u0439 \u0440\u0430\u0441\u0441\u0430\u0434\u044b, \u0434\u0435\u0440\u0435\u0432\u044c\u0435\u0432, \u043a\u0443\u0441\u0442\u0430\u0440\u043d\u0438\u043a\u043e\u0432, \u0441\u0430\u0436\u0435\u043d\u0446\u0435\u0432,  \u043b\u0438\u0441\u0442\u0432\u0435\u043d\u043d\u044b\u0445, \u0445\u0432\u043e\u0439\u043d\u044b\u0445 \u0434\u0435\u0440\u0435\u0432\u044c\u0435\u0432, \u043c\u043d\u043e\u0433\u043e\u043b\u0435\u0442\u043d\u0438\u0445 \u0440\u0430\u0441\u0442\u0435\u043d\u0438\u0439,\u0445\u0432\u043e\u0439\u043d\u044b\u0445 \u043a\u0443\u0441\u0442\u0430\u0440\u043d\u0438\u043a\u043e\u0432<\/span>"
-                        }, {
-                            "img": "\/assets\/panorama\/panorama16.jpg",
-                            "caption": "\u0414\u043b\u044f \u043b\u044e\u0431\u0438\u043c\u043e\u0433\u043e \u0433\u043e\u0440\u043e\u0434\u0430<span>\u0413\u0430\u0440\u0434\u0438 \u043e\u0441\u0443\u0449\u0435\u0441\u0442\u0432\u043b\u044f\u0435\u0442 \u043f\u0440\u043e\u0434\u0430\u0436\u0443 \u0446\u0432\u0435\u0442\u043e\u0447\u043d\u044b\u0445 \u043a\u0443\u043b\u044c\u0442\u0443\u0440, \u0434\u0435\u043a\u043e\u0440\u0430\u0442\u0438\u0432\u043d\u044b\u0445 \u0440\u0430\u0441\u0442\u0435\u043d\u0438\u0439 \u0434\u043b\u044f \u0433\u043e\u0440\u043e\u0434\u0441\u043a\u043e\u0433\u043e \u043e\u0437\u0435\u043b\u0435\u043d\u0435\u043d\u0438\u044f<\/span>"
-                        }, {
-                            "img": "\/assets\/panorama\/panorama3.jpg",
-                            "caption": "\u041e\u0440\u0430\u043d\u0436\u0435\u0440\u0435\u044f \u0446\u0432\u0435\u0442\u043e\u0447\u043d\u044b\u0445 \u0440\u0430\u0441\u0442\u0435\u043d\u0438\u0439 \u0413\u0430\u0440\u0434\u0438<span>\u041f\u0440\u043e\u0434\u0430\u0436\u0430 \u0446\u0432\u0435\u0442\u0443\u0449\u0438\u0445 \u0433\u043e\u0440\u0448\u0435\u0447\u043d\u044b\u0445 \u0440\u0430\u0441\u0442\u0435\u043d\u0438\u0439, \u044d\u043a\u0437\u043e\u0442\u0438\u0447\u0435\u0441\u043a\u0438\u0445 \u0446\u0432\u0435\u0442\u043e\u0432, \u0433\u043e\u0440\u0448\u0435\u0447\u043d\u044b\u0445 \u0446\u0432\u0435\u0442\u043e\u0432, \u043a\u043b\u0443\u043c\u0431\u043e\u0432\u044b\u0445 \u0446\u0432\u0435\u0442\u043e\u0432, \u043a\u0430\u0448\u043f\u043e, \u0437\u043b\u0430\u043a\u043e\u0432\u044b\u0445 \u0440\u0430\u0441\u0442\u0435\u043d\u0438\u0439, \u043a\u043b\u0435\u043c\u0430\u0442\u0438\u0441\u043e\u0432<\/span>"
-                        }, {
-                            "img": "\/assets\/panorama\/panorama9.jpg",
-                            "caption": "\u0414\u043b\u044f \u0442\u043e\u0440\u0433\u043e\u0432\u044b\u0445 \u0446\u0435\u043d\u0442\u0440\u043e\u0432<span>\u0413\u0430\u0440\u0434\u0438 \u043e\u0441\u0443\u0449\u0435\u0441\u0442\u0432\u043b\u044f\u0435\u0442 \u043f\u0440\u043e\u0434\u0430\u0436\u0443 \u0446\u0432\u0435\u0442\u043e\u0447\u043d\u044b\u0445 \u043a\u0443\u043b\u044c\u0442\u0443\u0440, \u0434\u0435\u043a\u043e\u0440\u0430\u0442\u0438\u0432\u043d\u044b\u0445 \u0440\u0430\u0441\u0442\u0435\u043d\u0438\u0439 \u0434\u043b\u044f \u0433\u043e\u0440\u043e\u0434\u0441\u043a\u043e\u0433\u043e \u043e\u0437\u0435\u043b\u0435\u043d\u0435\u043d\u0438\u044f<\/span>"
-                        }, {
-                            "img": "\/assets\/panorama\/panorama2.jpg",
-                            "caption": "\u0421\u043e\u0442\u0440\u0443\u0434\u043d\u0438\u0447\u0435\u0441\u0442\u0432\u043e<span>\u0414\u043b\u044f \u0441\u043e\u0442\u0440\u0443\u0434\u043d\u0438\u0447\u0435\u0441\u0442\u0432\u0430 \u0441 \u0441\u0435\u0442\u0435\u0432\u044b\u043c\u0438 \u043c\u0430\u0440\u043a\u0435\u0442\u0430\u043c\u0438 \u043d\u0430 \u0442\u0435\u0440\u0440\u0438\u0442\u043e\u0440\u0438\u0438 \u0423\u043a\u0440\u0430\u0438\u043d\u044b. \u041e\u043f\u0442\u043e\u0432\u0430\u044f \u043f\u0440\u043e\u0434\u0430\u0436\u0430 \u0440\u0430\u0441\u0442\u0435\u043d\u0438\u0439 \u0432 \u0430\u0441\u0441\u043e\u0440\u0442\u0438\u043c\u0435\u043d\u0442\u0435.<\/span>"
-                        }, {
-                            "img": "\/assets\/panorama\/panorama4.jpg",
-                            "caption": "\u0414\u043b\u044f \u0442\u043e\u0440\u0433\u043e\u0432\u044b\u0445 \u0446\u0435\u043d\u0442\u0440\u043e\u0432<span>\u0413\u0430\u0440\u0434\u0438 \u043e\u0441\u0443\u0449\u0435\u0441\u0442\u0432\u043b\u044f\u0435\u0442 \u043f\u0440\u043e\u0434\u0430\u0436\u0443 \u0446\u0432\u0435\u0442\u043e\u0447\u043d\u044b\u0445 \u043a\u0443\u043b\u044c\u0442\u0443\u0440, \u0440\u0430\u0441\u0442\u0435\u043d\u0438\u0439  \u0432 \u043a\u0440\u0443\u043f\u043d\u0435\u0439\u0448\u0438\u0435 \u0442\u043e\u0440\u0433\u043e\u0432\u044b\u0435 \u0441\u0435\u0442\u0438 \u0423\u043a\u0440\u0430\u0438\u043d\u044b<\/span>"
-                        }, {
-                            "img": "\/assets\/panorama\/panorama5.jpg",
-                            "caption": "\u041e\u0437\u0435\u043b\u0435\u043d\u0435\u043d\u0438\u0435 \u0433\u043e\u0440\u043e\u0434\u0430<span>\u0412\u044b\u0440\u0430\u0449\u0438\u0432\u0430\u0435\u043c \u0440\u0430\u0441\u0442\u0435\u043d\u0438\u044f \u043f\u0440\u0438\u043c\u0435\u043d\u044f\u0435\u043c\u044b\u0435 \u0434\u043b\u044f \u043e\u0437\u0435\u043b\u0435\u043d\u0435\u043d\u0438\u044f \u0438 \u0431\u043b\u0430\u0433\u043e\u0443\u0441\u0442\u0440\u043e\u0439\u0441\u0442\u0432\u0430, \u043f\u043e\u0441\u0430\u0434\u043a\u0438 \u0436\u0438\u0432\u043e\u0439 \u0438\u0437\u0433\u043e\u0440\u043e\u0434\u0438, \u0441\u043e\u0437\u0434\u0430\u043d\u0438\u044f \u0446\u0432\u0435\u0442\u043d\u0438\u043a\u043e\u0432, \u0430\u043b\u044c\u043f\u0438\u0439\u0441\u043a\u0438\u0445 \u0433\u043e\u0440\u043e\u043a \u0438 \u0434\u0440\u0443\u0433\u0438\u0445 \u043b\u0430\u043d\u0434\u0448\u0430\u0444\u0442\u043d\u044b\u0445 \u043a\u043e\u043c\u043f\u043e\u0437\u0438\u0446\u0438\u0439<\/span>"
-                        }];
-
-                        if (jQuery.isArray(images)) {
-                            $("#mainGallery").fotorama({
-                                data: images,
-                                cropToFit: true,
-                                nav: 'none',
-                                arrows: true,
-                                transitionDuration: 1500,
-                                transition: 'fade',
-                                caption: 'overlay',
-                                loop: true
-                            });
-                        }
-
-                    });
-                    </script>
-                    <script>
-                    var $ = jQuery.noConflict();
-
-                    $(document).ready(function() {
-
-                        $('#search').on('input', function(e) {
-                            var str = $(this).val();
-                            str = str.charAt(0).toUpperCase() + str.slice(1);
-                            $(this).val(str);
-                        });
-
-
-                        $(".sisea-search-form").submit(function() {
-                            $("#site-search-results").load("search", $(".sisea-search-form").serialize()).show(); //Загружаем результаты с лэндинг-документа и выводим контейнер
-                            return false;
-                        });
-                        $(".sisea-search-form input").keyup(function() {
-                            if (this.value.length > 2) { //2 - миниум знаков для начала отображения live search
-                                $("#site-search-results").load("search", $(".sisea-search-form").serialize()).show(); //Загружаем результаты с лэндинг-документа и выводим контейнер
-                            } else {
-                                $("#site-search-results").hide(); //Если введено менее 2 знаков, контейнер скрыт (CSS display:none;)
-                            }
-                        });
-                    });
-                    </script>
+<link rel="stylesheet" type="text/css" href="<?php echo get_template_directory_uri(); ?>/css/owl.carousel.css">
+<link rel="stylesheet" type="text/css" href="<?php echo get_template_directory_uri(); ?>/css/owl.theme.css">
+<script type="text/javascript" src="<?php echo get_template_directory_uri(); ?>/js/owl.carousel.min.js"></script>
