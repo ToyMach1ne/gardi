@@ -47,80 +47,23 @@
                                 </div>
 
                                 <div class="plants-gallery">
-                                    <div class="wrapper_galery_min">
-                                        <div id="gallery" class="card-gallery fotorama fotorama_horizontal fotorama_shadows fotorama_csstransitions" data-width="268" data-height="339" data-autoplay="true" style="min-width: 0px;">
-                                            <div class="fotorama__wrap fotorama__wrap_style_fade" style="width: 268px; height: 339px;">
-                                                <div class="fotorama__noise"></div>
-                                                <div class="fotorama__shaft" style="width: 268px; height: 339px;">
-<?php $images = get_field('gallery');if( $images ): ?>
-<?php foreach( $images as $image ): ?>
+                                    <div id="demo">
+        <div class="container">
+          <div class="row">
+            <div class="span12">
+            <?php $images = get_field('product_gallery'); if( $images ): ?>
+              <div id="owl-demo-product" class="owlCarousel">
+              <?php $images = get_field('product_gallery'); if( $images ): foreach( $images as $image ): ?>
 
-                            <div class="fotorama__frame" >
-                              <img src="<?php echo $image['sizes']['thumbnail']; ?>" alt="<?php echo $image['alt']; ?>">
-                            </div>
-                        <?php endforeach; ?>
-                        <?php endif; ?>
+                <div class="item"><img src="<?php echo $image['sizes']['large']; ?>" alt="<?php echo $image['alt']; ?>" /></div>
+                <?php endforeach; endif; ?>
 
-
-
-                            </div>
-
-
-
-
-                                <i class="fotorama__arr fotorama__arr_prev">◀</i><i class="fotorama__arr fotorama__arr_next">▶</i>
-
-                                            </div>
-
-                                            <div class="fotorama__thumbs" style="visibility: visible; width: 268px;">
-
-                                                <div class="fotorama__thumbs-shaft">
-      <?php $images = get_field('gallery');if( $images ): ?>
-                                    <?php foreach( $images as $image ): ?>
-                                                <i class="fotorama__thumb">
-                                                  <i class="fotorama__thumb__dot"></i>
-                                                </i>
-
-                                           <?php endforeach; ?>
-<?php endif; ?>
-
-                                                </div>
-                                            </div>
-                                        </div>
-
-
-                                        <script type="text/javascript" src="<?php echo get_template_directory_uri(); ?>/js/fotorama.js"></script>
-                                        <script type="text/javascript">
-                                        jQuery(document).ready(function($) {
-                                            images = [
-
-      <?php $images = get_field('gallery');if( $images ): ?>
-                                    <?php foreach( $images as $image ): ?>
-
-                                            {
-                                                "img": "<?php echo $image['sizes']['thumbnail']; ?>"
-                                            },
-
-                                           <?php endforeach; ?>
-                                           <?php endif; ?>
-
-];
-                                            if (jQuery.isArray(images)) {
-                                                $("#gallery").fotorama({
-                                                    data: images,
-                                                    cropToFit: true,
-                                                    nav: 'dots',
-                                                    arrows: true,
-                                                    transitionDuration: 1500,
-                                                    transition: 'fade',
-                                                    caption: 'overlay',
-                                                    dataCaption: "Ель голубая Биалобок",
-                                                    loop: true
-                                                });
-                                            }
-                                        });
-                                        </script>
-                                    </div>
+              </div>
+              <?php endif; ?>
+            </div>
+          </div>
+        </div>
+    </div>
                                 </div>
 
 

@@ -2418,9 +2418,9 @@
         <div class="container">
           <div class="row">
             <div class="span12">
-            <?php $images = get_field('gallery'); if( $images ): ?>
+            <?php $images = get_field('header_slider'); if( $images ): ?>
               <div id="owl-demo" class="owlCarousel">
-              <?php $images = get_field('gallery'); if( $images ): foreach( $images as $image ): ?>
+              <?php $images = get_field('header_slider'); if( $images ): foreach( $images as $image ): ?>
 
                 <div class="item"><?php echo home_url(); ?>"><img src="<?php echo $image['sizes']['large']; ?>" alt="<?php echo $image['alt']; ?>" /></div>
                 <?php endforeach; endif; ?>
@@ -2450,14 +2450,32 @@
 
   $("#owl-demo").owlCarousel({
 
-      navigation : true, // Show next and prev buttons
+
       slideSpeed : 300,
       paginationSpeed : 400,
       singleItem:true,
       autoPlay:true,
-      slideSpeed:5000,
       navigation:false,
-      items:4,
+      items:5,
+
+
+
+  });
+
+});
+    </script>
+
+    <script type="text/javascript">
+    $(document).ready(function() {
+
+  $("#owl-demo-product").owlCarousel({
+
+      slideSpeed : 300,
+      paginationSpeed : 400,
+      singleItem:true,
+      autoPlay:true,
+      navigation:false,
+      items:5,
 
 
 
