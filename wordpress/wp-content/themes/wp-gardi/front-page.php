@@ -3,27 +3,28 @@
                     <div class="center-content-wrapper">
                         <h1 class="page-title">Питомник растений и цветов</h1>
                         <h2 class="green-italic-title">Саженцы лиственных, хвойных деревьев и кустарников, клумбовые и комнатные цветы</h2>
-                        <div class="gardi-thumbs-wrapper">
-                        <?php query_posts(array( 'post_type' => 'archive_product','showposts' => 3 ) ); ?>
-                            <?php while (have_posts()) : the_post(); ?>
+                      <?php $terms = get_field('category_product'); if( $terms ): ?>
+                        <?php foreach( $terms as $term ): ?>
                             <div class="gardi-thumb">
                               <div class="top-img-thumb-wrapper">
-                                  <a href="<?php the_permalink() ?>"><span><?php the_post_thumbnail('thumbnail'); ?></span></a>
+                                  <a href="<?php echo get_term_link( $term ); ?>">
+                                <span><?php $image = get_field('image', $term);
+                              if( !empty($image) ): ?>
+                              <img src="<?php echo $image['url']; ?>" alt="<?php echo $image['alt']; ?>" />
+                              <?php endif; ?>
+                              </span>
                                     <img src="<?php echo get_template_directory_uri(); ?>/img/investing1a.png" alt="Иконка питомника" class="icon-gardi-thumb">
                                 </div>
                                 <div class="gardi-thumb-description">
-                                  <a href="<?php the_permalink() ?>">
-                                  <h2><?php the_title(); ?></h2></a>
-                                  <p><?php echo get_the_excerpt(); ?></p>
+                                <h2><?php echo $term->name; ?></h2></a>
+                                  <p><?php echo $term->description; ?></p>
                                     <div class="contact-info-gardi-thumb">
                                     </div>
-                                    <ul>
-                                        <li><?php the_content(); ?></li>
-                                    </ul>
-                                    <a href="http://localhost:9090/lorem-ipsum-2.htm" class="green-btn">Продукция питомника</a>
+                                    <a href="http://localhost:9090/lorem-ipsum-2.htm" class="green-btn main">Продукция питомника</a>
                                 </div>
                             </div>
-                          <?php endwhile;?>
+                           <?php endforeach; ?>
+                          <?php endif; ?>
                           <?php wp_reset_query(); ?>
                         </div>
                 </section>
@@ -33,7 +34,7 @@
                     <div class="center-content-wrapper">
                     <?php foreach( $posts as $p ): // variable must NOT be called $post (IMPORTANT) ?>
                         <div class="left-section-description">
-                        <a href="<?php echo get_permalink( $p->ID ); ?>" target="_blank">
+                        <a href="<?php echo get_permalink( $p->ID ); ?>">
                             <h3><?php echo get_the_title( $p->ID ); ?></h3>
                             <p><?php the_content(); ?></p>
                           <a href="#" class="download-catalog">Подробнее об оранжерее</a>

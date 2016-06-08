@@ -4507,8 +4507,13 @@ html {
 
 .gardi-thumb-description ul li {
   font-size: 12px;
-
+text-align: center;
   color: #404040;
+}
+.gardi-thumb-description {
+  p {
+    text-align: center;
+  }
 }
 .top-img-thumb-wrapper {
   span {
@@ -5649,4 +5654,7 @@ footer {
 }
 .owl-pagination {
   display:none;
+}
+.green-btn.main {
+  margin-left:62px;
 }

@@ -691,45 +691,8 @@ function post_type_product() {
 
   register_post_type( 'product' , $args );
 }
-add_action( 'init', 'post_type_archive_product' );
-function post_type_archive_product() {
 
-  $labels = array(
-    'name' => 'archive_product',
-    'singular_name' => 'archive_product',
-    'add_new' => 'Add',
-    'add_new_item' => 'Add',
-    'edit' => 'Edit',
-    'edit_item' => 'Edit',
-    'new-item' => 'Add',
-    'view' => 'View',
-    'view_item' => 'View',
-    'search_items' => 'Search',
-    'not_found' => 'Not Found',
-    'not_found_in_trash' => 'Not Found',
-    'parent' => 'Parent'
-  );
 
-  $args = array(
-    'description' => 'archive_product Post Type',
-    'show_ui' => true,
-    'menu_position' => 5,
-    'exclude_from_search' => false,
-    'labels' => $labels,
-    'public' => true,
-    'publicly_queryable' => true,
-    'capability_type' => 'post',
-    'hierarchical' => false,
-    'supports' => array('title','editor','thumbnail','excerpt','comments'),
-    'has_archive' => true,
-    'rewrite' => array( 'slug' => 'archive_product' ),
-    // https://developer.wordpress.org/resource/dashicons/
-    'menu_icon' => 'dashicons-cart',
-    'show_in_rest' => true
-  );
-
-  register_post_type( 'archive_product' , $args );
-}
 add_action( 'init', 'post_type_product_descr' );
 function post_type_product_descr() {
 
@@ -770,7 +733,37 @@ function post_type_product_descr() {
   register_post_type( 'product_descr' , $args );
 }
 
+// hook into the init action and call create_book_taxonomies when it fires
+add_action( 'init', 'taxonomies_category', 0 );
+function taxonomies_category() {
+  // Add new taxonomy, make it hierarchical (like categories)
+  $labels = array(
+    'name'              => 'Categories',
+    'singular_name'     => 'Category',
+    'search_items'      => 'Search',
+    'all_items'         => 'All',
+    'parent_item'       => 'Parent',
+    'parent_item_colon' => 'Parent',
+    'edit_item'         => 'Edit',
+    'update_item'       => 'Update',
+    'add_new_item'      => 'Add',
+    'new_item_name'     => 'Add',
+    'menu_name'         => 'Categories',
+  );
 
+  $args = array(
+    'hierarchical'      => true,
+    'labels'            => $labels,
+    'show_ui'           => true,
+    'show_admin_column' => true,
+    'query_var'         => true,
+    'rewrite'           => array( 'slug' => 'categories' ),
+  );
+
+  register_taxonomy( 'categories', array( 'product' ), $args );
+
+
+};
 
 
 ?>
