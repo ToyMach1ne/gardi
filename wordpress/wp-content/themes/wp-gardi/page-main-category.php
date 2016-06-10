@@ -46,8 +46,7 @@ if( $terms ): ?>
                         </div>
 
                 </section>
-<?php get_footer(); ?>
 </div>
-
+<?php get_footer(); ?>
 
 

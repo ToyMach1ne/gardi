@@ -3,7 +3,7 @@
 
     <a rel="nofollow" class="feature-img" href="<?php the_permalink(); ?>" title="<?php the_title(); ?>">
       <?php if ( has_post_thumbnail()) :
-        the_post_thumbnail('thumbnail');
+        the_post_thumbnail('medium');
       else: ?>
         <img src="<?php echo catchFirstImage(); ?>" title="<?php the_title(); ?>" alt="<?php the_title(); ?>" />
       <?php endif; ?>

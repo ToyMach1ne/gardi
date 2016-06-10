@@ -1,7 +1,7 @@
 <?php get_header(); ?>
   <article>
 
-    <h1 class="cat-title inner-title"><?php _e( 'Categories for', 'wpeasy' ); the_category(', '); ?></h1>
+    <h1 class="search-title inner-title"><?php echo sprintf( __( '%s Search Results for ', 'wpeasy' ), $wp_query->found_posts ); echo get_search_query(); ?></h1>
     <?php get_template_part('loop'); ?>
     <?php get_template_part('pagination'); ?>
 

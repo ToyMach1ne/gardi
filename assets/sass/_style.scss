@@ -150,9 +150,9 @@ body {
 
   list-style: none;
   li {
-    &:hover >ul {
-        display: block;
-      }
+    &:hover > ul {
+      display: block;
+    }
     .sub-menu {
       position: absolute;
       top: 50px;
@@ -166,7 +166,6 @@ body {
 
       background-color: #3c3c3c;
       background-color: rgba(72,72,72,.9);
-
       li {
         width: 100%;
 
@@ -3366,9 +3365,11 @@ span.unit-animation-flower img {
 
 .other-plants-list3 li {
   display: inline-block;
-text-align: center;
+
   width: 200px;
   margin: 0 25px 0 0;
+
+  text-align: center;
 }
 
 .other-plants-list3 li a {
@@ -4410,6 +4411,13 @@ html {
 
   text-align: center;
 }
+.gardi-thumbs-wrapper.video > div {
+  display: inline-block;
+  float: left;
+
+  width: 250px;
+
+}
 
 .gardi-thumb {
   display: inline-block;
@@ -4433,8 +4441,8 @@ html {
   width: 100%;
   span {
     img {
-      width:305px;
-      height:200px;
+      width: 305px;
+      height: 200px;
     }
   }
 }
@@ -4507,7 +4515,9 @@ html {
 
 .gardi-thumb-description ul li {
   font-size: 12px;
-text-align: center;
+
+  text-align: center;
+
   color: #404040;
 }
 .gardi-thumb-description {
@@ -4517,8 +4527,8 @@ text-align: center;
 }
 .top-img-thumb-wrapper {
   span {
-    width:305px;
-    height:200px;
+    width: 305px;
+    height: 200px;
   }
 }
 
@@ -5634,27 +5644,40 @@ footer {
 .about-company.right-side-image-block {
   .center-content-wrapper {
     img {
-      width:370px;
-      height:250px;
+      width: 370px;
+      height: 250px;
+
       border-radius: 6px;
     }
   }
 }
+
 .about-company.top-garden {
   .center-content-wrapper {
     img {
-      width:370px;
-      height:250px;
+      width: 370px;
+      height: 250px;
+
       border-radius: 6px;
     }
     .right-section-description {
-      float:right;
+      float: right;
     }
   }
 }
+.center-content-wrapper.video {
+  img {
+    width:100% !important;
+  }
+}
 .owl-pagination {
-  display:none;
+  display: none;
 }
 .green-btn.main {
-  margin-left:62px;
+  margin-left: 62px;
+}
+.gardi-thumb-description {
+  p {
+    text-align: center;
+  }
 }
