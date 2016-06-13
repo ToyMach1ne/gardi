@@ -20,7 +20,7 @@
                                   <p><?php echo $term->description; ?></p>
                                     <div class="contact-info-gardi-thumb">
                                     </div>
-                                    <a href="http://localhost:9090/lorem-ipsum-2.htm" class="green-btn main">Продукция питомника</a>
+                                    <a href="<?php echo get_term_link( $term ); ?>" class="green-btn main">Продукция питомника</a>
                                 </div>
                             </div>
                            <?php endforeach; ?>
@@ -34,7 +34,6 @@
                     <div class="center-content-wrapper">
                     <?php foreach( $posts as $p ): // variable must NOT be called $post (IMPORTANT) ?>
                         <div class="left-section-description">
-                        <a href="<?php echo get_permalink( $p->ID ); ?>">
                             <h3><?php echo get_the_title( $p->ID ); ?></h3>
                             <p><?php the_content(); ?></p>
                           <a href="#" class="download-catalog">Подробнее об оранжерее</a>
@@ -52,8 +51,6 @@
                     <?php foreach( $posts as $p ): // variable must NOT be called $post (IMPORTANT) ?>
                       <img src="<?php echo wp_get_attachment_url( get_post_thumbnail_id( $p->ID, "medium" ) ); ?>" alt="">
                         <div class="right-section-description">
-
-                        <a href="<?php echo get_permalink( $p->ID ); ?>" target="_blank">
                             <h3><?php echo get_the_title( $p->ID ); ?></h3>
                             <p><?php the_content(); ?><p>
                           <a href="#" class="download-catalog">Подробнее о питомнике</a>
@@ -69,7 +66,6 @@
                     <div class="center-content-wrapper">
                     <?php foreach( $posts as $p ): // variable must NOT be called $post (IMPORTANT) ?>
                         <div class="left-section-description">
-                        <a href="<?php echo get_permalink( $p->ID ); ?>" target="_blank">
                             <h3><?php echo get_the_title( $p->ID ); ?></h3>
                             <p><?php the_content(); ?></p>
                           <a href="#" class="download-catalog">Подробнее об оранжерее</a>

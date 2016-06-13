@@ -54,10 +54,8 @@
             <?php $images = get_field('product_gallery'); if( $images ): ?>
               <div id="owl-demo-product" class="owlCarousel">
               <?php $images = get_field('product_gallery'); if( $images ): foreach( $images as $image ): ?>
-
                 <div class="item"><img src="<?php echo $image['sizes']['large']; ?>" alt="<?php echo $image['alt']; ?>" /></div>
                 <?php endforeach; endif; ?>
-
               </div>
               <?php endif; ?>
             </div>
@@ -73,8 +71,10 @@
                                         <tbody>
 
                                             <tr>
-                                                <th class="title-table">высота растения</th>
-                                                <th class="title-table">диаметр растения</th>
+                                                <th class="title-table">Высота растения</th>
+                                                <th class="title-table">Диаметр растения</th>
+                                                <th class="title-table">Корневая система</th>
+                                                <th class="title-table">Параметры</th>
 
                                                 <th class="title-table">цена</th>
                                             </tr>
@@ -83,10 +83,9 @@
                                                 <?php the_field('height');?>
                                                 </td>
                                             <td><?php the_field('diametr');?></td>
-                                                <td><?php the_field('price');?>
-                                                    <span itemprop="price" style="display:none">570</span>
-                                                    <span style="display:none;" itemprop="availability" content="in_stock">В наличии</span>
-                                                </td>
+                                            <td><?php the_field('root_system');?></td>
+                                            <td><?php the_field('options');?></td>
+                                            <td><?php the_field('price');?> </td>
                                             </tr>
                                         </tbody>
                                     </table>
@@ -112,7 +111,7 @@
                             <ul class="other-plants-category-list">
 
                                 <li class="first active">
-                                    <a style="background: url(<?php echo get_template_directory_uri(); ?>/img/3a.jpg) no-repeat;" href="http://lopatin.dev/plodovye-derevya.htm" title="">
+                                    <a style="background: url(<?php echo get_template_directory_uri(); ?>/img/3a.jpg) no-repeat;" href="http://lopatin.dev/categories/plodovye-derevya" title="">
                                         <span class="title-wrapper background">
     <span class="icon"></span>
                                         <span class="plants-category-title" style="color: #586651;">Плодовые Деревья</span>
@@ -120,7 +119,7 @@
                                     </a>
                                 </li>
                                 <li>
-                                    <a style="background: url(<?php echo get_template_directory_uri(); ?>/img/1a.jpg) no-repeat;" href="http://lopatin.dev/plodovye-kustarniki.htm" title="">
+                                    <a style="background: url(<?php echo get_template_directory_uri(); ?>/img/1a.jpg) no-repeat;" href="http://lopatin.dev/categories/plodovye-kustarniki" title="">
                                         <span class="title-wrapper background">
     <span class="icon"></span>
                                         <span class="plants-category-title" style="color: #586651;">Плодовые Кустарники</span>
@@ -128,7 +127,7 @@
                                     </a>
                                 </li>
                                 <li>
-                                    <a style="background: url(<?php echo get_template_directory_uri(); ?>/img/5a.jpg) no-repeat;" href="http://lopatin.dev/dekorativnye.htm" title="">
+                                    <a style="background: url(<?php echo get_template_directory_uri(); ?>/img/5a.jpg) no-repeat;" href="http://lopatin.dev/categories/dekorativnye" title="">
                                         <span class="title-wrapper background">
     <span class="icon"></span>
                                         <span class="plants-category-title" style="color: #586651;">Декоративные Растения</span>
