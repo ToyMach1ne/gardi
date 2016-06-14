@@ -135,7 +135,7 @@
                                     </a>
                                 </li>
                                 <li class="last">
-                                    <a style="background: url(<?php echo get_template_directory_uri(); ?>/img/4a.jpg) no-repeat;" href="http://lopatin.dev/video-uroki.htm" title="">
+                                    <a style="background: url(<?php echo get_template_directory_uri(); ?>/img/4a.jpg) no-repeat;" href="http://lopatin.dev/video" title="">
                                         <span class="title-wrapper background">
     <span class="icon"></span>
                                         <span class="plants-category-title" style="color: #586651;">Видео Уроки</span>

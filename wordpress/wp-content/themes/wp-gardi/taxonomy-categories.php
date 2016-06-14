@@ -5,7 +5,7 @@
                     <section class="about-company top-leaves">
                         <div class="center-content-wrapper">
                             <div class="wrapper">
-                                <h1 class="page-title"><?php the_title(); ?></h1>
+                              <h1 class="page-title"><?php echo get_the_title(); ?></h1>
                                 <h2 class="green-italic-title">
                                 </h2>
                                 <div class="plant-thumb-wrapper">

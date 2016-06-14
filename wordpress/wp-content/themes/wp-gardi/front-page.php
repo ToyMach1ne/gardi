@@ -35,13 +35,14 @@
                     <?php foreach( $posts as $p ): // variable must NOT be called $post (IMPORTANT) ?>
                         <div class="left-section-description">
                             <h3><?php echo get_the_title( $p->ID ); ?></h3>
-                            <p><?php the_content(); ?></p>
+                            <p><?php the_field('text_here'); ?></p>
                           <a href="#" class="download-catalog">Подробнее об оранжерее</a>
                         </div>
                         <img src="<?php echo wp_get_attachment_url( get_post_thumbnail_id( $p->ID, "medium" ) ); ?>" alt="">
                         <?php endforeach; ?>
                     </div>
                     <?php endif; ?>
+
               </section>
 
                 <div class="clr"></div>
@@ -52,7 +53,7 @@
                       <img src="<?php echo wp_get_attachment_url( get_post_thumbnail_id( $p->ID, "medium" ) ); ?>" alt="">
                         <div class="right-section-description">
                             <h3><?php echo get_the_title( $p->ID ); ?></h3>
-                            <p><?php the_content(); ?><p>
+                            <p><?php the_field('text_here'); ?><p>
                           <a href="#" class="download-catalog">Подробнее о питомнике</a>
                         </div>
                         <?php endforeach; ?>
@@ -67,7 +68,7 @@
                     <?php foreach( $posts as $p ): // variable must NOT be called $post (IMPORTANT) ?>
                         <div class="left-section-description">
                             <h3><?php echo get_the_title( $p->ID ); ?></h3>
-                            <p><?php the_content(); ?></p>
+                            <p><?php the_field('text_here'); ?></p>
                           <a href="#" class="download-catalog">Подробнее об оранжерее</a>
                         </div>
                         <img src="<?php echo wp_get_attachment_url( get_post_thumbnail_id( $p->ID, "medium" ) ); ?>" alt="">
