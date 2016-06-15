@@ -5700,4 +5700,34 @@ footer {
 .news-main-title {
   color:#699154;
 }
+.span12.contact-slider {
+  height:610px;
+  position: relative;
+      margin-bottom: 53px;
+      img {
+        height:610px; ;
+      }
+  .slider-descr {
+    display:block;
+    position: absolute;
+    top:40%;
+    left:15%;
+    color:#fff;
+    font-size: 35px;
+    width:900px;
+    height:80px;
+    text-align: center;
+  }
+  .slider-second {
+    display:block;
+    position: absolute;
+    top:60%;
+    left:15%;
+    color:#fff;
+    font-size: 35px;
+    width:900px;
+    height:80px;
+    text-align: center;
+  }
+}
 
