@@ -63,7 +63,7 @@
 <div class="sisea-search-form-container">
 <div class="center-content-wrapper">
     <div class="b-header-social">
-        <a href="https://vk.com/id137855179 " target="_blank" rel="nofollow" class="b-social-link b-social-link_vk" title="Питомник растений в Вконтакте"></a>
+        <a href="https://vk.com/id137855179" target="_blank" rel="nofollow" class="b-social-link b-social-link_vk" title="Питомник растений в Вконтакте"></a>
         <a href="https://www.facebook.com/ivan.vladimirovich.750" target="_blank" rel="nofollow" class="b-social-link b-social-link_fb" title="Питомник растений в Facebook"></a>
 
         <a href="https://www.youtube.com/channel/UCO8K_RoMPgLQPVbbGLaOiYQ" target="_blank" rel="nofollow" class="b-social-link b-social-link_youtube" title="Ютуб канал"></a>

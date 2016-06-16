@@ -4,8 +4,6 @@
 <div class="background-inside-container">
 
 
-
-
 <section class="about-company top-garden">
 <h1 class="page-title"><?php the_title(); ?></h1>
 <h2 class="green-italic-title"><?php the_content(); ?></h2>
