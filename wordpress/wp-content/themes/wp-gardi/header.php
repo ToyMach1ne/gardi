@@ -63,22 +63,16 @@
 <div class="sisea-search-form-container">
 <div class="center-content-wrapper">
     <div class="b-header-social">
-        <a href="https://vk.com/gardi_biz" target="_blank" rel="nofollow" class="b-social-link b-social-link_vk" title="Питомник растений в Вконтакте"></a>
-        <a href="https://www.facebook.com/pages/%D0%93%D0%B0%D1%80%D0%B4%D0%B8-%D0%9F%D0%B8%D1%82%D0%BE%D0%BC%D0%BD%D0%B8%D0%BA-%D1%80%D0%B0%D1%81%D1%82%D0%B5%D0%BD%D0%B8%D0%B9-%D0%9E%D1%80%D0%B0%D0%BD%D0%B6%D0%B5%D1%80%D0%B5%D1%8F-%D1%86%D0%B2%D0%B5%D1%82%D0%BE%D0%B2/600208133407620" target="_blank" rel="nofollow" class="b-social-link b-social-link_fb" title="Питомник растений в Facebook"></a>
+        <a href="https://vk.com/id137855179 " target="_blank" rel="nofollow" class="b-social-link b-social-link_vk" title="Питомник растений в Вконтакте"></a>
+        <a href="https://www.facebook.com/ivan.vladimirovich.750" target="_blank" rel="nofollow" class="b-social-link b-social-link_fb" title="Питомник растений в Facebook"></a>
 
         <a href="https://www.youtube.com/channel/UCO8K_RoMPgLQPVbbGLaOiYQ" target="_blank" rel="nofollow" class="b-social-link b-social-link_youtube" title="Ютуб канал"></a>
 
     </div>
-    <form class="sisea-search-form" action="search" method="get">
-        <fieldset>
-            <label for="search">Поиск по сайту:</label>
-            <input type="text" name="search" id="search" value="">
-
-
-            <input type="hidden" name="id" value="351">
-        </fieldset>
-        <div id="site-search-results" class="search-results search-results-on-main"></div>
-    </form>
+    <form class="search" method="get" action="<?php echo home_url(); ?>" role="search">
+  <input class="search-input" type="search" name="s" placeholder="Поиск по сайту">
+  <button class="search-submit" type="submit" role="button"><?php _e( 'Поиск', 'wpeasy' ); ?></button>
+</form><!-- /search -->
 
 </div>
 </div>

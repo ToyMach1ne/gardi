@@ -5730,4 +5730,23 @@ footer {
     text-align: center;
   }
 }
+.our-services-wrapper.searchform >div {
+  display:block;
+  height: 150px;
+  padding-bottom: 15px;
+}
+.search-submit {
+  background-color:#a6ca48;
+  border-radius:5%;
+  color:#fff;
+}
+.search-input {
+  height: 19px;
+  border-radius:5%;
+  &:active,
+  &:hover {
+  background-color:#a6ca48;
+  color:#fff;
+  }
+}
 

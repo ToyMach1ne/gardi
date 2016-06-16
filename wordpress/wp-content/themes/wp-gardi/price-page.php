@@ -18,12 +18,14 @@
             </thead>
               <?php $posts = get_field('price_table'); if( $posts ): ?>
             <tbody>
-          <?php foreach( $posts as $p ): // variable must NOT be called $post (IMPORTANT) ?>
+          <?php
+            $d = 1;
+           foreach( $posts as $p ): // variable must NOT be called $post (IMPORTANT) ?>
               <tr class="default">
                   <td rowspan="1">
-                  <?php $d = 1; while($d <= 5) {
+                  <?php
                       echo "" . $d . "<br />";
-                      $d++; } ?>
+                      $d++;  ?>
                       </td>
                   <td><?php echo get_the_title( $p->ID ); ?>
                   </td>
