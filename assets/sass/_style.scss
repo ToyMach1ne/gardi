@@ -150,6 +150,9 @@ body {
 
   list-style: none;
   li {
+    &.current-menu-item {
+    background: url("../img/menu-active.png") no-repeat center top;
+    }
     &:hover > ul {
       display: block;
     }
@@ -170,7 +173,6 @@ body {
         width: 100%;
 
         text-align: center;
-
         border-bottom: 1px solid #80886c;
         a {
           width: 100%;
@@ -306,7 +308,7 @@ body {
 /*-o-transition: 0.1s linear all;*/
 /*transition: 0.1s linear all;*/
 /*-webkit-tap-highlight-color: rgba(0, 0, 0, 0.1);*/
-/*}*/
+/*}
 
 .blok-header-nav1 .header-nav li a {
   font-size: 13px;
