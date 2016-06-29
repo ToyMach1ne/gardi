@@ -5751,4 +5751,17 @@ footer {
   color:#fff;
   }
 }
-
+.our-services-wrapper {
+  &:hover {
+        transition: all .2s;
+        background-color: rgba(50,50,48,.1);
+        box-shadow: 0 0 20px 5px #80b842;
+      }
+}
+.gardi-thumb {
+  &:hover {
+        transition: all .2s;
+        background-color: rgba(50,50,48,.1);
+        box-shadow: 0 0 20px 7px #80b842;
+      }
+}

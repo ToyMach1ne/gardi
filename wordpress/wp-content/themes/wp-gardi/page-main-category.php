@@ -32,7 +32,7 @@ if( $terms ): ?>
                                     <div class="contact-info-gardi-thumb">
                                     </div>
                                     </a>
-                                    <a href="#" class="green-btn">Продукция питомника</a>
+                                    <a href="<?php echo get_term_link( $term ); ?>" class="green-btn">Продукция питомника</a>
                                 </div>
                               </div>
 
