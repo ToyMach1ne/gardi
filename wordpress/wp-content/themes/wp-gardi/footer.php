@@ -29,13 +29,13 @@
 
                                     <a href="https://www.facebook.com/ivan.vladimirovich.750" target="_blank" rel="nofollow" class="b-social-link b-social-link_fb" title="Питомник растений  в Facebook"></a>
 
-                                    <a href="#" target="_blank" rel="nofollow" class="b-social-link b-social-link_od" title="Питомник растений в Одноклассниках"></a>
+                                    <a href="https://www.youtube.com/channel/UCO8K_RoMPgLQPVbbGLaOiYQ" target="_blank" rel="nofollow" class="b-social-link b-social-link_youtube" title="Ютуб канал"></a>
 
                                 </div>
                             </div>
                         </div>
                     </div>
-                </footer>>
+                </footer>
             </div>
         </div>
     </div>

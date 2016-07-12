@@ -71,20 +71,22 @@
                                         <tbody>
 
                                             <tr>
-                                                <th class="title-table">Высота растения</th>
-                                                <th class="title-table">Диаметр растения</th>
+                                                <th class="title-table">Сорт</th>
+                                                <th class="title-table">Возраст</th>
                                                 <th class="title-table">Корневая система</th>
-                                                <th class="title-table">Параметры</th>
+                                                <th class="title-table">Обьем контейнера</th>
+                                                <th class="title-table">Наличие</th>
 
-                                                <th class="title-table">цена</th>
+                                                <th class="title-table">Цена</th>
                                             </tr>
                                             <tr>
                                                 <td>
-                                                <?php the_field('height');?>
+                                                <?php the_field('sort');?>
                                                 </td>
-                                            <td><?php the_field('diametr');?></td>
+                                            <td><?php the_field('age');?></td>
                                             <td><?php the_field('root_system');?></td>
-                                            <td><?php the_field('options');?></td>
+                                            <td><?php the_field('diametr');?></td>
+                                            <td><?php the_field('availability');?> </td>
                                             <td><?php the_field('price');?> </td>
                                             </tr>
                                         </tbody>

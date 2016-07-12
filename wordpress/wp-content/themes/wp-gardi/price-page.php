@@ -9,9 +9,11 @@
                     <tr>
                         <th class="title-table">№</th>
                         <th class="title-table">Название товара</th>
-                        <th class="title-table" style="width: 80px;">Обхват <br> (м)</th>
-                        <th class="title-table">Параметры <br> (h-d)</th>
+                        <th class="title-table" style="width: 80px;">Сорт</th>
+                        <th class="title-table">Возраст</th>
                         <th class="title-table" style="width: 80px;">Корневая система</th>
+                        <th class="title-table" style="width: 80px;">Обьем контейнера</th>
+                        <th class="title-table" style="width: 80px;">Наличие</th>
                         <th class="title-table">Цена</th>
 
                     </tr>
@@ -29,9 +31,11 @@
                       </td>
                   <td><?php echo get_the_title( $p->ID ); ?>
                   </td>
-                  <td><?php the_field('diametr', $p->ID); ?></td>
-                  <td><?php the_field('options', $p->ID); ?></td>
+                  <td><?php the_field('sort', $p->ID); ?></td>
+                  <td><?php the_field('age', $p->ID); ?></td>
                   <td><?php the_field('root_system', $p->ID); ?></td>
+                  <td><?php the_field('diametr', $p->ID); ?></td>
+                  <td><?php the_field('availability', $p->ID); ?></td>
                   <td class="price-column"><span><?php the_field('price', $p->ID); ?></span></td>
               </tr>
               <?php endforeach; ?>

@@ -19,8 +19,9 @@
                                 <h2><?php echo $term->name; ?></h2></a>
                                   <p><?php echo $term->description; ?></p>
                                     <div class="contact-info-gardi-thumb">
-                                    </div>
                                     <a href="<?php echo get_term_link( $term ); ?>" class="green-btn main">Продукция питомника</a>
+                                    </div>
+
                                 </div>
                             </div>
                            <?php endforeach; ?>
@@ -35,14 +36,13 @@
                     <?php foreach( $posts as $p ): // variable must NOT be called $post (IMPORTANT) ?>
                         <div class="left-section-description">
                             <h3><?php echo get_the_title( $p->ID ); ?></h3>
-                            <p><?php the_field('text_here'); ?></p>
-                          <a href="<?php the_permalink($p->ID); ?>" class="download-catalog">Подробнее об оранжерее</a>
+                            <p><?php the_field('text_here_1'); ?></p>
+                          <a href="<?php the_permalink($p->ID); ?>" class="download-catalog">Подробнее</a>
                         </div>
                         <img src="<?php echo wp_get_attachment_url( get_post_thumbnail_id( $p->ID, "medium" ) ); ?>" alt="">
                         <?php endforeach; ?>
                     </div>
                     <?php endif; ?>
-
               </section>
 
                 <div class="clr"></div>
@@ -53,8 +53,8 @@
                       <img src="<?php echo wp_get_attachment_url( get_post_thumbnail_id( $p->ID, "medium" ) ); ?>" alt="">
                         <div class="right-section-description">
                             <h3><?php echo get_the_title( $p->ID ); ?></h3>
-                            <p><?php the_field('text_here'); ?><p>
-                          <a href="<?php the_permalink($p->ID); ?>" class="download-catalog">Подробнее о питомнике</a>
+                            <p><?php the_field('text_here_2'); ?><p>
+                          <a href="<?php the_permalink($p->ID); ?>" class="download-catalog">Подробнее</a>
                         </div>
                         <?php endforeach; ?>
                     </div>
@@ -68,8 +68,8 @@
                     <?php foreach( $posts as $p ): // variable must NOT be called $post (IMPORTANT) ?>
                         <div class="left-section-description">
                             <h3><?php echo get_the_title( $p->ID ); ?></h3>
-                            <p><?php the_field('text_here'); ?></p>
-                          <a href="<?php the_permalink($p->ID); ?>" class="download-catalog">Подробнее об оранжерее</a>
+                            <p><?php the_field('text_here_3'); ?></p>
+                          <a href="<?php the_permalink($p->ID); ?>" class="download-catalog">Подробнее</a>
                         </div>
                         <img src="<?php echo wp_get_attachment_url( get_post_thumbnail_id( $p->ID, "medium" ) ); ?>" alt="">
                         <?php endforeach; ?>
