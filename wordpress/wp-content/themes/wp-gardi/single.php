@@ -5,8 +5,6 @@
 
     <h1 class="news-main-title"><?php the_title(); ?></h1>
 
-<p><strong><?php the_title(); ?></strong></p>
-
 <p><?php the_content(); ?></p>
 
 <div class="g-width100">

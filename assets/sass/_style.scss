@@ -4415,7 +4415,7 @@ html {
 }
 .gardi-thumbs-wrapper.video > div {
   display: inline-block;
-  float: left;
+
 
   width: 232px;
 
@@ -5764,4 +5764,15 @@ footer {
         background-color: rgba(50,50,48,.1);
         box-shadow: 0 0 20px 7px #80b842;
       }
+}
+.about_us {
+  p {
+    text-align: justify;
+    font-size: 15px;
+  }
+}
+.video-container {
+  text-align: center;
+  font-size: 15px;
+      padding: 5px 0;
 }

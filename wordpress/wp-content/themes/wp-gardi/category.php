@@ -19,7 +19,7 @@
 
 <p><?php the_excerpt(); ?></p>
 
-<a href="#" class="more-details">Читать подробнее</a>
+<a href="<?php the_permalink() ?>" class="more-details">Читать подробнее</a>
 
 </div>
 
