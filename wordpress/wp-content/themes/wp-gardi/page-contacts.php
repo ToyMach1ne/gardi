@@ -12,6 +12,7 @@
               </div>
               <span class="slider-descr"><?php the_field('contact_form'); ?></span>
                 <span class="slider-second"><?php the_field('second_contact_form'); ?></span>
+                <span class="slider-third"><?php the_field('adress'); ?></span>
               <?php endif; ?>
             </div>
           </div>

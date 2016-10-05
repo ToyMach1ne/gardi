@@ -54,7 +54,7 @@
             <?php $images = get_field('product_gallery'); if( $images ): ?>
               <div id="owl-demo-product" class="owlCarousel">
               <?php $images = get_field('product_gallery'); if( $images ): foreach( $images as $image ): ?>
-                <div class="item"><img src="<?php echo $image['sizes']['large']; ?>" alt="<?php echo $image['alt']; ?>" /></div>
+                <div class="single-item"><img src="<?php echo $image['sizes']['large']; ?>" alt="<?php echo $image['alt']; ?>" /></div>
                 <?php endforeach; endif; ?>
               </div>
               <?php endif; ?>
@@ -101,7 +101,7 @@
                                 <div class="other-plants-content">
 
                                     <ul class="other-plants-list3">
-                                    <?php query_posts(array( 'post_type' => 'product','showposts' => 100 ) ); ?>
+                                    <?php query_posts(array( 'post_type' => 'product','showposts' => 200, 'orderby' => 'title', 'order' => 'ASC' ) ); ?>
                                 <?php while (have_posts()) : the_post(); ?>
                                         <li><a href="<?php the_permalink() ?>"><?php the_title(); ?></a></li>
                                         <?php endwhile;?>
@@ -111,25 +111,24 @@
                                 </div>
                             </div>
                             <ul class="other-plants-category-list">
-
-                                <li class="first active">
-                                    <a style="background: url(<?php echo get_template_directory_uri(); ?>/img/3a.jpg) no-repeat;" href="http://lopatin.dev/categories/plodovye-derevya" title="">
+                             <li class="first active">
+                                <a style="background: url(<?php echo get_template_directory_uri(); ?>/img/3a.jpg) no-repeat;" href="http://sad-lopatina.org.ua/categories/plodovye-derevya" title="">
                                         <span class="title-wrapper background">
-    <span class="icon"></span>
+                                            <span class="icon"></span>
                                         <span class="plants-category-title" style="color: #586651;">Плодовые Деревья</span>
                                         </span>
                                     </a>
                                 </li>
                                 <li>
-                                    <a style="background: url(<?php echo get_template_directory_uri(); ?>/img/1a.jpg) no-repeat;" href="http://lopatin.dev/categories/plodovye-kustarniki" title="">
+                                    <a style="background: url(<?php echo get_template_directory_uri(); ?>/img/1a.jpg) no-repeat;" href="http://sad-lopatina.org.ua/categories/plodovye-kustarniki" title="">
                                         <span class="title-wrapper background">
-    <span class="icon"></span>
+                                        <span class="icon"></span>
                                         <span class="plants-category-title" style="color: #586651;">Плодовые Кустарники</span>
                                         </span>
                                     </a>
                                 </li>
                                 <li>
-                                    <a style="background: url(<?php echo get_template_directory_uri(); ?>/img/5a.jpg) no-repeat;" href="http://lopatin.dev/categories/dekorativnye" title="">
+                                    <a style="background: url(<?php echo get_template_directory_uri(); ?>/img/5a.jpg) no-repeat;" href="http://sad-lopatina.org.ua/categories/dekorativnye" title="">
                                         <span class="title-wrapper background">
     <span class="icon"></span>
                                         <span class="plants-category-title" style="color: #586651;">Декоративные Растения</span>
@@ -137,7 +136,7 @@
                                     </a>
                                 </li>
                                 <li class="last">
-                                    <a style="background: url(<?php echo get_template_directory_uri(); ?>/img/4a.jpg) no-repeat;" href="http://lopatin.dev/video" title="">
+                                    <a style="background: url(<?php echo get_template_directory_uri(); ?>/img/4a.jpg) no-repeat;" href="http://sad-lopatina.org.ua/video" title="">
                                         <span class="title-wrapper background">
     <span class="icon"></span>
                                         <span class="plants-category-title" style="color: #586651;">Видео Уроки</span>

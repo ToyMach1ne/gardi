@@ -5731,6 +5731,17 @@ footer {
     height:80px;
     text-align: center;
   }
+  .slider-third {
+    display: block;
+    position: absolute;
+    top: 70%;
+    left: 15%;
+    color: #fff;
+    font-size: 35px;
+    width: 900px;
+    height: 80px;
+    text-align: center;
+  }
 }
 .our-services-wrapper.searchform >div {
   display:block;
@@ -5775,4 +5786,18 @@ footer {
   text-align: center;
   font-size: 15px;
       padding: 5px 0;
+}
+.owl-carousel {
+  .item {
+    img {
+          height: 533px;
+    }
+  }
+}
+.owl-carousel {
+  .single-item {
+    img {
+      height: 250px;
+    }
+  }
 }

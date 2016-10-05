@@ -39,7 +39,7 @@
                             <p><?php the_field('text_here_1'); ?></p>
                           <a href="<?php the_permalink($p->ID); ?>" class="download-catalog">Подробнее</a>
                         </div>
-                        <img src="<?php echo wp_get_attachment_url( get_post_thumbnail_id( $p->ID, "medium" ) ); ?>" alt="">
+  <img src="<?php echo wp_get_attachment_url( get_post_thumbnail_id( $p->ID, 370,250 ) ); ?>" alt="">
                         <?php endforeach; ?>
                     </div>
                     <?php endif; ?>
@@ -82,7 +82,7 @@
                         <p class="green-italic-title">У нас всегда проходят различные события и мероприятия.</p>
                         <ul class="offers-item-list">
 
-                        <?php query_posts("showposts=3&cat=9"); ?>
+                        <?php query_posts("showposts=3&cat=9&exclude=1116"); ?>
                     <?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
 
                             <li>
