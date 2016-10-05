@@ -3,7 +3,7 @@
   Plugin Name: Owl Carousel
   Description: A simple plugin to include an Owl Carousel in any post
   Author: Pierre JEHAN
-  Version: 0.5.1
+  Version: 0.5.2
   Author URI: http://www.pierre-jehan.com
   Licence: GPL2
  */
@@ -19,7 +19,7 @@ add_action('manage_posts_custom_column', 'owl_column');
 add_action('admin_menu', 'owl_carousel_menu');
 add_action('admin_enqueue_scripts', 'owl_carousel_admin_register_scripts');
 
-if(filter_var(get_option('owl_carousel_wordpress_gallery', false), FILTER_VALIDATE_BOOLEAN)) {
+if (filter_var(get_option('owl_carousel_wordpress_gallery', false), FILTER_VALIDATE_BOOLEAN)) {
     add_filter('post_gallery', 'owl_carousel_post_gallery', 10, 2);
 }
 
@@ -34,15 +34,15 @@ function owlcarousel_init() {
 
     $labels = array(
         'name' => __('Owl Carousel', 'owl-carousel-domain'),
-        'singular_name' => __('Carousel Item', 'owl-carousel-domain'),
-        'add_new' => __('Add New Item', 'owl-carousel-domain'),
-        'add_new_item' => __('Add New Carousel Item', 'owl-carousel-domain'),
-        'edit_item' => __('Edit Carousel Item', 'owl-carousel-domain'),
-        'new_item' => __('Add New Carousel Item', 'owl-carousel-domain'),
-        'view_item' => __('View Item', 'owl-carousel-domain'),
+        'singular_name' => __('Carousel Slide', 'owl-carousel-domain'),
+        'add_new' => __('Add New Slide', 'owl-carousel-domain'),
+        'add_new_item' => __('Add New Carousel Slide', 'owl-carousel-domain'),
+        'edit_item' => __('Edit Carousel Slide', 'owl-carousel-domain'),
+        'new_item' => __('Add New Carousel Slide', 'owl-carousel-domain'),
+        'view_item' => __('View Slide', 'owl-carousel-domain'),
         'search_items' => __('Search Carousel', 'owl-carousel-domain'),
-        'not_found' => __('No carousel items found', 'owl-carousel-domain'),
-        'not_found_in_trash' => __('No carousel items found in trash', 'owl-carousel-domain'),
+        'not_found' => __('No carousel slides found', 'owl-carousel-domain'),
+        'not_found_in_trash' => __('No carousel slides found in trash', 'owl-carousel-domain'),
     );
 
     register_post_type('owl-carousel', array(
@@ -60,16 +60,31 @@ function owlcarousel_init() {
         )
     ));
 
-    register_taxonomy(
-		'Carousel',
-		'owl-carousel',
-		array(
-			'label' => __( 'Carousel' ),
-			'rewrite' => array( 'slug' => 'carousel' ),
-			'hierarchical' => true,
-            'show_admin_column' => true,
-		)
-	);
+    $taxonomy_labels = array(
+        'name' => __('Carousels', 'owl-carousel-domain'),
+        'singular_name' => __('Carousel', 'owl-carousel-domain'),
+        'search_items' => __('Search Carousels', 'owl-carousel-domain'),
+        'popular_items' => __('Popular Carousels', 'owl-carousel-domain'),
+        'all_items' => __('All Carousels', 'owl-carousel-domain'),
+        'parent_item' => null,
+        'parent_item_colon' => null,
+        'edit_item' => __('Edit Carousel', 'owl-carousel-domain'),
+        'update_item' => __('Update Carousel', 'owl-carousel-domain'),
+        'add_new_item' => __('Add New Carousel', 'owl-carousel-domain'),
+        'new_item_name' => __('New Carousel Name', 'owl-carousel-domain'),
+        'separate_items_with_commas' => __('Separate carousels with commas', 'owl-carousel-domain'),
+        'add_or_remove_items' => __('Add or remove carousels', 'owl-carousel-domain'),
+        'choose_from_most_used' => __('Choose from the most used carousels', 'owl-carousel-domain'),
+        'not_found' => __('No carousels found.', 'owl-carousel-domain'),
+        'menu_name' => __('Carousels', 'owl-carousel-domain'),
+    );
+
+    register_taxonomy('Carousel', 'owl-carousel', array(
+        'labels' => $taxonomy_labels,
+        'rewrite' => array('slug' => 'carousel'),
+        'hierarchical' => true,
+        'show_admin_column' => true,
+    ));
 
     add_image_size('owl_widget', 180, 100, true);
     add_image_size('owl_function', 600, 280, true);
@@ -95,40 +110,40 @@ function submenu_parameters() {
 
     echo '<div class="wrap owl_carousel_page">';
 
-        echo '<?php update_option("owl_carousel_wordpress_gallery", $_POST["wordpress_gallery"]); ?>';
+    echo '<?php update_option("owl_carousel_wordpress_gallery", $_POST["wordpress_gallery"]); ?>';
 
-		echo '<h2>' . __('Owl Carousel parameters', 'owl-carousel-domain') . '</h2>';
+    echo '<h2>' . __('Owl Carousel parameters', 'owl-carousel-domain') . '</h2>';
 
-		echo '<form action="' . plugin_dir_url( __FILE__ ) . 'save_parameter.php" method="POST" id="owlcarouselparameterform">';
+    echo '<form action="' . plugin_dir_url(__FILE__) . 'save_parameter.php" method="POST" id="owlcarouselparameterform">';
 
-		    echo '<h3>' . __('Wordpress Gallery', 'owl-carousel-domain') . '</h3>';
-		    echo '<input type="checkbox" name="wordpress_gallery" ' . $isWordpressGallery . ' />';
-		    echo '<label>' . __('Use Owl Carousel with Wordpress Gallery', 'owl-carousel-domain') . '</label>';
-		    echo '<br />';
-        echo '<label>' . __('Order Owl Carousel elements by ', 'owl-carousel-domain') . '</label>';
-        echo '<select name="orderby" />';
-        foreach($orderByOptions as $option) {
-            echo '<option value="' . $option . '" ' . (($option == $orderBy) ? 'selected="selected"' : '') . '>' . $option . '</option>';
-        }
-        echo '</select>';
-        echo '<br />';
-		    echo '<br />';
-		    echo '<input type="submit" class="button-primary owl-carousel-save-parameter-btn" value="' . __('Save changes', 'owl-carousel-domain') . '" />';
-		    echo '<span class="spinner"></span>';
+    echo '<h3>' . __('Wordpress Gallery', 'owl-carousel-domain') . '</h3>';
+    echo '<input type="checkbox" name="wordpress_gallery" ' . $isWordpressGallery . ' />';
+    echo '<label>' . __('Use Owl Carousel with Wordpress Gallery', 'owl-carousel-domain') . '</label>';
+    echo '<br />';
+    echo '<label>' . __('Order Owl Carousel elements by ', 'owl-carousel-domain') . '</label>';
+    echo '<select name="orderby" />';
+    foreach ($orderByOptions as $option) {
+        echo '<option value="' . $option . '" ' . (($option == $orderBy) ? 'selected="selected"' : '') . '>' . $option . '</option>';
+    }
+    echo '</select>';
+    echo '<br />';
+    echo '<br />';
+    echo '<input type="submit" class="button-primary owl-carousel-save-parameter-btn" value="' . __('Save changes', 'owl-carousel-domain') . '" />';
+    echo '<span class="spinner"></span>';
 
-		echo '</form>';
+    echo '</form>';
 
-	echo '</div>';
+    echo '</div>';
 }
 
 /**
  * List of JavaScript / CSS files for admin
  */
 function owl_carousel_admin_register_scripts() {
-    wp_register_style('owl.carousel.admin.styles', plugin_dir_url( __FILE__ ) . 'css/admin_styles.css');
+    wp_register_style('owl.carousel.admin.styles', plugin_dir_url(__FILE__) . 'css/admin_styles.css');
     wp_enqueue_style('owl.carousel.admin.styles');
 
-    wp_register_script('owl.carousel.admin.script', plugin_dir_url( __FILE__ ) . 'js/admin_script.js');
+    wp_register_script('owl.carousel.admin.script', plugin_dir_url(__FILE__) . 'js/admin_script.js');
     wp_enqueue_script('owl.carousel.admin.script');
 }
 
@@ -172,6 +187,7 @@ function owl_add_tinymce_button($buttons) {
 /*
  * Initialize Owl Widget
  */
+
 function owl_widgets_init() {
     register_widget("owl_Widget");
 }
@@ -272,7 +288,7 @@ function owl_carousel_attachment_fields_to_edit($form_fields, $post) {
  * @return array
  */
 function owl_carousel_attachment_fields_to_save($post, $attachment) {
-    if( isset($attachment['owlurl']) ){
+    if (isset($attachment['owlurl'])) {
         update_post_meta($post['ID'], '_owlurl', $attachment['owlurl']);
     }
 
@@ -323,34 +339,31 @@ function owl_function($atts, $content = null) {
         $meta_link = get_post_meta(get_post_thumbnail_id(get_the_ID()), '_owlurl', true);
 
         $result .= '<div class="item">';
-        if ($img_src[0])
-        {
+        if ($img_src[0]) {
             $result .= '<div>';
-                if(!empty($meta_link)) {
-                    $result .= '<a href="'. $meta_link .'">';
-                }
-                if ($lazyLoad){
-                    $result .= '<img class="lazyOwl" title="' . get_the_title() . '" data-src="' . $img_src[0] . '" alt="' . get_the_title() . '"/>';
-                } else {
-                    $result .= '<img title="' . get_the_title() . '" src="' . $img_src[0] . '" alt="' . get_the_title() . '"/>';
-                }
-                if(!empty($meta_link)) {
-                    $result .= '</a>';
-                }
+            if (!empty($meta_link)) {
+                $result .= '<a href="' . $meta_link . '">';
+            }
+            if ($lazyLoad) {
+                $result .= '<img class="lazyOwl" title="' . get_the_title() . '" data-src="' . $img_src[0] . '" alt="' . get_the_title() . '"/>';
+            } else {
+                $result .= '<img title="' . get_the_title() . '" src="' . $img_src[0] . '" alt="' . get_the_title() . '"/>';
+            }
+            if (!empty($meta_link)) {
+                $result .= '</a>';
+            }
 
-                // Add image overlay with hook
-                $slide_title = get_the_title();
-                $slide_content = get_the_content();
-                $img_overlay = '<div class="owl-carousel-item-imgoverlay">';
-                    $img_overlay .= '<div class="owl-carousel-item-imgtitle">' . $slide_title . '</div>';
-                    $img_overlay .= '<div class="owl-carousel-item-imgcontent">' . $slide_content . '</div>';
-                $img_overlay .= '</div>';
-                $result .= apply_filters( 'owlcarousel_img_overlay', $img_overlay, $slide_title, $slide_content, $meta_link );
+            // Add image overlay with hook
+            $slide_title = get_the_title();
+            $slide_content = get_the_content();
+            $img_overlay = '<div class="owl-carousel-item-imgoverlay">';
+            $img_overlay .= '<div class="owl-carousel-item-imgtitle">' . $slide_title . '</div>';
+            $img_overlay .= '<div class="owl-carousel-item-imgcontent">' . $slide_content . '</div>';
+            $img_overlay .= '</div>';
+            $result .= apply_filters('owlcarousel_img_overlay', $img_overlay, $slide_title, $slide_content, $meta_link);
 
             $result .= '</div>';
-        }
-        else
-        {
+        } else {
             $result .= '<div class="owl-carousel-item-text">' . get_the_content() . '</div>';
         }
         $result .= '</div>';
@@ -359,7 +372,6 @@ function owl_function($atts, $content = null) {
 
     return $result;
 }
-
 
 /**
  * Owl Carousel for Wordpress image gallery
@@ -387,10 +399,11 @@ function owl_carousel_post_gallery($output, $attr) {
         'size' => 'thumbnail',
         'include' => '',
         'exclude' => ''
-    ), $attr));
+                    ), $attr));
 
     $id = intval($id);
-    if ('RAND' == $order) $orderby = 'none';
+    if ('RAND' == $order)
+        $orderby = 'none';
 
     if (!empty($include)) {
         $include = preg_replace('/[^0-9,]+/', '', $include);
@@ -402,11 +415,12 @@ function owl_carousel_post_gallery($output, $attr) {
         }
     }
 
-    if (empty($attachments)) return '';
+    if (empty($attachments))
+        return '';
 
 
     // Add item number if not defined
-    if(!isset($attr['items'])) {
+    if (!isset($attr['items'])) {
         $attr['items'] = '1';
     }
 
@@ -426,11 +440,11 @@ function owl_carousel_post_gallery($output, $attr) {
         $title = $attachment->post_title;
 
         $output .= "<div class=\"item\">";
-        if(!empty($meta_link)) {
+        if (!empty($meta_link)) {
             $output .= "<a href=\"" . $meta_link . "\">";
         }
         $output .= "<img src=\"{$img[0]}\" width=\"{$img[1]}\" height=\"{$img[2]}\" alt=\"$title\" />\n";
-        if(!empty($meta_link)) {
+        if (!empty($meta_link)) {
             $output .= "</a>";
         }
         $output .= "</div>";
@@ -440,4 +454,3 @@ function owl_carousel_post_gallery($output, $attr) {
 
     return $output;
 }
-?>

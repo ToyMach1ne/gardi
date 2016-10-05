@@ -37,7 +37,7 @@
                 <div class="blok-header-nav1">
                     <div class="center-content-wrapper">
                         <div class="branding-nav-wrapper">
-                            <a href="<?php echo home_url(); ?>"><img src="<?php echo get_template_directory_uri(); ?>/img/gardi-logotype.png" class="gardi-logo" alt="logo"></a>
+                            <a href="<?php echo home_url(); ?>"><img src="<?php echo get_template_directory_uri(); ?>/img/logo_4.png" class="gardi-logo" alt="logo"></a>
                 <?php wpeHeadNav() ?>
 
                         </div>
@@ -97,7 +97,7 @@
       slideSpeed : 300,
       paginationSpeed : 400,
       singleItem:true,
-      autoPlay:true,
+      autoPlay:false,
       navigation:false,
       items:5,
 

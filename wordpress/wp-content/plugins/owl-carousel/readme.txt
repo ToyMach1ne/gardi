@@ -1,7 +1,7 @@
 === Owl Carousel ===
 Contributors: Pierre Jehan
 Tags: carousel, slideshow, slider, gallery, images, photos, responsive
-Tested up to: 4.0
+Tested up to: 4.5.2
 License: GPL2
 License URI: http://opensource.org/licenses/MIT
 
@@ -18,7 +18,7 @@ Special thanks to Bartosz Wojciechowski, Owl Carousel developer.
 * Image slide
 * HTML slide
 * Wordpress Gallery compatible
-* [NEW!] Slide link
+* Slide link
 * And of course, all the Owl Carousel options!
 
 #### How to use ####
@@ -67,6 +67,10 @@ Paste the link in the "Owl Carousel URL" field when you choose the slide picture
 2. Admin screenshot
 
 == Changelog ==
+
+= 0.5.2 =
+* Fix typo with itemsDesktopSmall option (thanks to maxdamage80 for spotting this bug)
+* Change "Carousel Items" to "Carousel Slides"
 
 = 0.5.1 =
 * Change default items order in parameters
