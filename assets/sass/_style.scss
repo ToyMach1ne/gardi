@@ -5719,29 +5719,14 @@ footer {
     width:900px;
     height:80px;
     text-align: center;
-  }
-  .slider-second {
-    display:block;
-    position: absolute;
-    top:60%;
-    left:15%;
-    color:#fff;
-    font-size: 35px;
-    width:900px;
-    height:80px;
-    text-align: center;
-  }
-  .slider-third {
-    display: block;
-    position: absolute;
-    top: 70%;
-    left: 15%;
+    p {
     color: #fff;
-    font-size: 35px;
-    width: 900px;
-    height: 80px;
-    text-align: center;
+    font-size: 30px;
+    line-height: 50px;
+    }
+
   }
+
 }
 .our-services-wrapper.searchform >div {
   display:block;
@@ -5750,12 +5735,19 @@ footer {
 }
 .search-submit {
   background-color:#a6ca48;
-  border-radius:5%;
+  border-radius:3%;
   color:#fff;
+      height: 25px;
+    width: 75px;
+    cursor: pointer;
+    &:hover {
+      box-shadow: 0 0 20px 0px #a6ca48;
+    }
 }
 .search-input {
-  height: 19px;
-  border-radius:5%;
+  height: 25px;
+  border-radius:3%;
+  width: 200px;
   &:active,
   &:hover {
   background-color:#a6ca48;

@@ -10,9 +10,7 @@
                 <div class="item"><img src="<?php echo $image['sizes']['large']; ?>" alt="<?php echo $image['alt']; ?>" /></div>
                 <?php endforeach; endif; ?>
               </div>
-              <span class="slider-descr"><?php the_field('contact_form'); ?></span>
-                <span class="slider-second"><?php the_field('second_contact_form'); ?></span>
-                <span class="slider-third"><?php the_field('adress'); ?></span>
+              <span class="slider-descr"><?php the_content(); ?></span>
               <?php endif; ?>
             </div>
           </div>

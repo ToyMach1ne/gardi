@@ -97,7 +97,7 @@
       slideSpeed : 300,
       paginationSpeed : 400,
       singleItem:true,
-      autoPlay:false,
+      autoPlay:true,
       navigation:false,
       items:5,
 
