@@ -186,7 +186,7 @@ class ewwwngg {
 	/* ngg_manage_images_columns hook */
 	function ewww_manage_images_columns( $columns = null ) {
 		if ( ! defined( 'EWWW_IMAGE_OPTIMIZER_JPEGTRAN' ) ) {
-			ewww_image_optimizer_tool_init();
+//			ewww_image_optimizer_tool_init();
 		}
 		if ( is_array ( $columns ) ) {
 			$columns['ewww_image_optimizer'] = esc_html__( 'Image Optimizer', EWWW_IMAGE_OPTIMIZER_DOMAIN );
@@ -226,7 +226,11 @@ class ewwwngg {
        		        $file_size = str_replace('B ', 'B', $file_size);
 			$valid = true;
 			// check to see if we have a tool to handle the mimetype detected
-			$skip = ewww_image_optimizer_skip_tools();
+			if ( ! defined( 'EWWW_IMAGE_OPTIMIZER_JPEGTRAN' ) ) {
+				ewww_image_optimizer_tool_init();
+				ewww_image_optimizer_notice_utils( 'quiet' );
+			}
+//			$skip = ewww_image_optimizer_skip_tools();
 	                switch ( $type ) {
         	                case 'image/jpeg':
 					// if jpegtran is missing, tell the user
@@ -457,7 +461,7 @@ class ewwwngg {
 		// store the image IDs to process in the db
 		update_option( 'ewww_image_optimizer_bulk_ngg_attachments', $images, false );
 		// add the EWWW IO script
-		wp_enqueue_script( 'ewwwbulkscript', plugins_url( '/includes/eio.js', __FILE__ ), array( 'jquery', 'jquery-ui-progressbar', 'jquery-ui-slider', 'postbox', 'dashboard' ) );
+		wp_enqueue_script( 'ewwwbulkscript', plugins_url( '/includes/eio.js', __FILE__ ), array( 'jquery', 'jquery-ui-progressbar', 'jquery-ui-slider', 'postbox', 'dashboard' ), EWWW_IMAGE_OPTIMIZER_VERSION );
 		//replacing the built-in nextgen styling rules for progressbar, partially because the bulk optimize page doesn't work without them
 		wp_deregister_style( 'ngg-jqueryui' );
 		wp_deregister_style( 'ngg-jquery-ui' );

@@ -131,7 +131,6 @@ include( ABSPATH . 'wp-admin/admin-header.php' );
 		?>
 	</div>
 <?php endif; ?>
-
 	<div id="dashboard-widgets-wrap">
 	<?php wp_dashboard(); ?>
 	</div><!-- dashboard-widgets-wrap -->

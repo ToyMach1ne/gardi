@@ -2,18 +2,18 @@
                     <div class="footer_ie">
                         <div class="center-content-wrapper">
                             <div class="footer-column margin-right55">
-                                <a href="http://www.gardi.biz/" class="footer-link" itemprop="name" title="Гарди. Декоративные растения и цветы, саженцы"> Декоративные растения и цветы, саженцы</a>
-                                <p itemprop="description">Питомник растений: продажа деревьев кустарников и цветов.
-                                    <br> Лиственные, хвойные деревья и кустарники, саженцы
-                                    <br> Комнатные цветы в горшках, садовые и клумбовые цветы
-                                    <br> Продажа растений и цветов в садовые центры и торговые сети
+                                <a href="<?php echo home_url(); ?>" class="footer-link" itemprop="name" title="Гарди. Декоративные растения и цветы, саженцы"> Декоративные растения и цветы, саженцы</a>
+                                <p itemprop="description">Посадочный материал от производителя.
+                                    <br> Только саженцы выращенные в Украинском климате.
+                                    <br> Реёнированные растения от питомника с 40-ка летним стажем.
                                 </p>
                             </div>
                             <div class="footer-column-small margin-right55">
                                 <a href="#" class="footer-link" title="Питомник декоративных растений">Питомник декоративных растений</a>
                                 <p itemprop="address" itemscope="" itemtype="http://schema.org/PostalAddress">Винница, Украина</p>
                                 <p>Tел.: <span itemprop="telephone">+380 67 775 27 48</span></p>
-                                <p>Email: <span itemprop="email"><a href="mailto:nursery@gardi.biz" class="footer-email">lopatinskii_sad@mail.ru</a></span></p>
+                                <p>Email: <span itemprop="email">
+                                <a href="mailto:lopatinskii_sad@mail.ru" class="footer-email">lopatinskii_sad@mail.ru</a></span></p>
                             </div>
                             <div class="footer-column-small">
                                 <a href="" class="footer-link" title="Оранжерея цветочных растений">Питомник плодовых растений</a>

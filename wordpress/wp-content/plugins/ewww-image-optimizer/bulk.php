@@ -12,7 +12,7 @@ function ewww_image_optimizer_bulk_preview() {
 	<h1>
 <?php 		esc_html_e( 'Bulk Optimize', EWWW_IMAGE_OPTIMIZER_DOMAIN );
 		if ( ewww_image_optimizer_get_option( 'ewww_image_optimizer_cloud_key' ) ) {
-			ewww_image_optimizer_cloud_verify(); 
+		//	ewww_image_optimizer_cloud_verify(); 
 			echo '<span><a id="ewww-bulk-credits-available" target="_blank" class="page-title-action" style="float:right;" href="https://ewww.io/my-account/">' . esc_html__( 'Image credits available:', EWWW_IMAGE_OPTIMIZER_DOMAIN ) . ' ' . ewww_image_optimizer_cloud_quota() . '</a></span>';
 		}
 	echo '</h1>';
@@ -388,7 +388,7 @@ function ewww_image_optimizer_bulk_script( $hook ) {
         }
 	// store the attachment IDs we retrieved in the 'bulk_attachments' option so we can keep track of our progress in the database
 	update_option( 'ewww_image_optimizer_bulk_attachments', $attachments, false );
-	wp_enqueue_script( 'ewwwbulkscript', plugins_url( '/includes/eio.js', __FILE__ ), array( 'jquery', 'jquery-ui-slider', 'jquery-ui-progressbar', 'postbox', 'dashboard' ) );
+	wp_enqueue_script( 'ewwwbulkscript', plugins_url( '/includes/eio.js', __FILE__ ), array( 'jquery', 'jquery-ui-slider', 'jquery-ui-progressbar', 'postbox', 'dashboard' ), EWWW_IMAGE_OPTIMIZER_VERSION );
 	// number of images in the ewwwio_table (previously optimized images)
 	$image_count = ewww_image_optimizer_aux_images_table_count();
 	// number of image attachments to be optimized
@@ -434,7 +434,7 @@ function ewww_image_optimizer_bulk_quota_update() {
 		wp_die( esc_html__( 'Access token has expired, please reload the page.', EWWW_IMAGE_OPTIMIZER_DOMAIN ) );
 	}
 	if ( ewww_image_optimizer_get_option( 'ewww_image_optimizer_cloud_key' ) ) {
-		ewww_image_optimizer_cloud_verify(); 
+	//	ewww_image_optimizer_cloud_verify(); 
 		echo esc_html__( 'Image credits available:', EWWW_IMAGE_OPTIMIZER_DOMAIN ) . ' ' . ewww_image_optimizer_cloud_quota();
 	}
 	ewwwio_memory( __FUNCTION__ );
