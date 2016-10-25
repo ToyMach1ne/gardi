@@ -1,0 +1,1 @@
+<?php die(); ?>{"headers":{"Vary":"Vary: Cookie","Last-Modified":"Last-Modified: Tue, 25 Oct 2016 13:15:35 GMT","Content-Type":"Content-Type: application\/rss+xml; charset=\"UTF-8\""},"uri":"sad-lopatina.org.ua\/24-04-2016.htm\/feed","blog_id":1,"post":null,"key":"sad-lopatina.org.ua80\/24-04-2016.htm\/feed"}

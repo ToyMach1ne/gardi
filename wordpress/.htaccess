@@ -1,49 +1,65 @@
-AddDefaultCharset UTF-8
-php_value memory_limit 512M
-
-# supress php errors
-php_flag display_startup_errors off
-php_flag display_errors off
-php_flag html_errors off
-php_value docref_root 0
-php_value docref_ext 0
-
-# enable PHP error logging
-php_flag  log_errors on
-php_value error_log  /home/d/dauzh7/altushkin.su/public_html/PHP_errors.log
-
 
 # BEGIN All In One WP Security
 #AIOWPS_BLOCK_WP_FILE_ACCESS_START
 <Files license.txt>
-order allow,deny
-deny from all
-</files>
+<IfModule mod_authz_core.c>
+Require all denied
+</IfModule>
+<IfModule !mod_authz_core.c>
+Order deny,allow
+Deny from all
+</IfModule>
+</Files>
 <Files wp-config-sample.php>
-order allow,deny
-deny from all
+<IfModule mod_authz_core.c>
+Require all denied
+</IfModule>
+<IfModule !mod_authz_core.c>
+Order deny,allow
+Deny from all
+</IfModule>
 </Files>
 <Files readme.html>
-order allow,deny
-deny from all
+<IfModule mod_authz_core.c>
+Require all denied
+</IfModule>
+<IfModule !mod_authz_core.c>
+Order deny,allow
+Deny from all
+</IfModule>
 </Files>
 #AIOWPS_BLOCK_WP_FILE_ACCESS_END
 #AIOWPS_BASIC_HTACCESS_RULES_START
 <Files .htaccess>
-order allow,deny
-deny from all
+<IfModule mod_authz_core.c>
+Require all denied
+</IfModule>
+<IfModule !mod_authz_core.c>
+Order deny,allow
+Deny from all
+</IfModule>
 </Files>
 ServerSignature Off
 LimitRequestBody 10240000
 <Files wp-config.php>
-order allow,deny
-deny from all
+<IfModule mod_authz_core.c>
+Require all denied
+</IfModule>
+<IfModule !mod_authz_core.c>
+Order deny,allow
+Deny from all
+</IfModule>
 </Files>
 #AIOWPS_BASIC_HTACCESS_RULES_END
 #AIOWPS_PINGBACK_HTACCESS_RULES_START
 <Files xmlrpc.php>
-order deny,allow
-deny from all
+<IfModule mod_authz_core.c>
+Require all denied
+</IfModule>
+<IfModule !mod_authz_core.c>
+Order deny,allow
+Deny from all
+</IfModule>
 </Files>
 #AIOWPS_PINGBACK_HTACCESS_RULES_END
 #AIOWPS_DISABLE_INDEX_VIEWS_START
@@ -55,14 +71,19 @@ RewriteCond %{REQUEST_METHOD} ^(TRACE|TRACK)
 RewriteRule .* - [F]
 #AIOWPS_DISABLE_TRACE_TRACK_END
 #AIOWPS_FORBID_PROXY_COMMENTS_START
-RewriteCond %{REQUEST_METHOD} =POST
-RewriteCond %{HTTP:VIA}%{HTTP:FORWARDED}%{HTTP:USERAGENT_VIA}%{HTTP:X_FORWARDED_FOR}%{HTTP:PROXY_CONNECTION} !^$ [OR]
-RewriteCond %{HTTP:XPROXY_CONNECTION}%{HTTP:HTTP_PC_REMOTE_ADDR}%{HTTP:HTTP_CLIENT_IP} !^$
-RewriteCond %{REQUEST_URI} !^/(wp-login.php|wp-admin/|wp-content/plugins/|wp-includes/).* [NC]
-RewriteRule .* - [F,NS,L]
+RewriteCond %{REQUEST_METHOD} ^POST
+RewriteCond %{HTTP:VIA} !^$ [OR]
+RewriteCond %{HTTP:FORWARDED} !^$ [OR]
+RewriteCond %{HTTP:USERAGENT_VIA} !^$ [OR]
+RewriteCond %{HTTP:X_FORWARDED_FOR} !^$ [OR]
+RewriteCond %{HTTP:X_FORWARDED_HOST} !^$ [OR]
+RewriteCond %{HTTP:PROXY_CONNECTION} !^$ [OR]
+RewriteCond %{HTTP:XPROXY_CONNECTION} !^$ [OR]
+RewriteCond %{HTTP:HTTP_PC_REMOTE_ADDR} !^$ [OR]
+RewriteCond %{HTTP:HTTP_CLIENT_IP} !^$
+RewriteRule wp-comments-post\.php - [F]
 #AIOWPS_FORBID_PROXY_COMMENTS_END
 #AIOWPS_DENY_BAD_QUERY_STRINGS_START
-RewriteCond %{QUERY_STRING} tag=     [NC,OR]
 RewriteCond %{QUERY_STRING} ftp:     [NC,OR]
 RewriteCond %{QUERY_STRING} http:    [NC,OR]
 RewriteCond %{QUERY_STRING} https:   [NC,OR]
@@ -77,7 +98,6 @@ RedirectMatch 403 \,
 RedirectMatch 403 \:
 RedirectMatch 403 \;
 RedirectMatch 403 \=
-RedirectMatch 403 \@
 RedirectMatch 403 \[
 RedirectMatch 403 \]
 RedirectMatch 403 \^
@@ -158,14 +178,36 @@ Redirectmatch 403 Table\/Latest\/index\.
 <IfModule mod_rewrite.c>
 RewriteCond %{REQUEST_METHOD} POST
 RewriteCond %{REQUEST_URI} ^(.*)?wp-comments-post\.php(.*)$
-RewriteCond %{HTTP_REFERER} !^http(s)?://framework\.wp [NC,OR]
+RewriteCond %{HTTP_REFERER} !^http(s)?://sad-lopatina\.org\.ua [NC,OR]
 RewriteCond %{HTTP_USER_AGENT} ^$
 RewriteRule .* http://127.0.0.1 [L]
 </IfModule>
 #AIOWPS_BLOCK_SPAMBOTS_END
+#AIOWPS_PREVENT_IMAGE_HOTLINKS_START
+<IfModule mod_rewrite.c>
+RewriteEngine on
+RewriteCond %{HTTP_REFERER} !^$
+RewriteCond %{REQUEST_FILENAME} -f
+RewriteCond %{REQUEST_FILENAME} \.(gif|jpe?g?|png)$ [NC]
+RewriteCond %{HTTP_REFERER} !^http(s)?://sad-lopatina\.org\.ua [NC]
+RewriteRule \.(gif|jpe?g?|png)$ - [F,NC,L]
+</IfModule>
+#AIOWPS_PREVENT_IMAGE_HOTLINKS_END
 # END All In One WP Security
 
+AddDefaultCharset UTF-8
+php_value memory_limit 512M
 
+# supress php errors
+php_flag display_startup_errors off
+php_flag display_errors off
+php_flag html_errors off
+php_value docref_root 0
+php_value docref_ext 0
+
+# enable PHP error logging
+php_flag  log_errors on
+php_value error_log  /home/d/dauzh7/altushkin.su/public_html/PHP_errors.log
 
 # BEGIN WordPress
 <IfModule mod_rewrite.c>
@@ -190,3 +232,41 @@ SetEnvIf user-agent «Indy Library» stayout=1
 SetEnvIf user-agent «libwww-perl» stayout=1
 SetEnvIf user-agent «Wget» stayout=1
 deny from env=stayout
+# GZip Ninja Speed -- Starts here
+# Do not write anything between "GZip Ninja Speed -- Starts" and "GZip Ninja Speed -- Ends"
+# It will be deleted while uninstalling GZip Ninja Speed plugin
+AddOutputFilterByType DEFLATE text/plain #GZip Ninja Speed
+AddOutputFilterByType DEFLATE text/html #GZip Ninja Speed
+AddOutputFilterByType DEFLATE text/xml #GZip Ninja Speed
+AddOutputFilterByType DEFLATE text/css #GZip Ninja Speed
+AddOutputFilterByType DEFLATE application/xml #GZip Ninja Speed
+AddOutputFilterByType DEFLATE application/xhtml+xml #GZip Ninja Speed
+AddOutputFilterByType DEFLATE application/rss+xml #GZip Ninja Speed
+AddOutputFilterByType DEFLATE application/javascript #GZip Ninja Speed
+AddOutputFilterByType DEFLATE application/x-javascript #GZip Ninja Speed
+AddType x-font/otf .otf #GZip Ninja Speed
+AddType x-font/ttf .ttf #GZip Ninja Speed
+AddType x-font/eot .eot #GZip Ninja Speed
+AddType x-font/woff .woff #GZip Ninja Speed
+AddType image/x-icon .ico #GZip Ninja Speed
+AddType image/png .png #GZip Ninja Speed
+# GZip Ninja Speed -- Ends here
+# GZip Ninja Speed -- Starts here
+# Do not write anything between "GZip Ninja Speed -- Starts" and "GZip Ninja Speed -- Ends"
+# It will be deleted while uninstalling GZip Ninja Speed plugin
+AddOutputFilterByType DEFLATE text/plain #GZip Ninja Speed
+AddOutputFilterByType DEFLATE text/html #GZip Ninja Speed
+AddOutputFilterByType DEFLATE text/xml #GZip Ninja Speed
+AddOutputFilterByType DEFLATE text/css #GZip Ninja Speed
+AddOutputFilterByType DEFLATE application/xml #GZip Ninja Speed
+AddOutputFilterByType DEFLATE application/xhtml+xml #GZip Ninja Speed
+AddOutputFilterByType DEFLATE application/rss+xml #GZip Ninja Speed
+AddOutputFilterByType DEFLATE application/javascript #GZip Ninja Speed
+AddOutputFilterByType DEFLATE application/x-javascript #GZip Ninja Speed
+AddType x-font/otf .otf #GZip Ninja Speed
+AddType x-font/ttf .ttf #GZip Ninja Speed
+AddType x-font/eot .eot #GZip Ninja Speed
+AddType x-font/woff .woff #GZip Ninja Speed
+AddType image/x-icon .ico #GZip Ninja Speed
+AddType image/png .png #GZip Ninja Speed
+# GZip Ninja Speed -- Ends here

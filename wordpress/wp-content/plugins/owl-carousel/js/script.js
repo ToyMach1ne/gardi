@@ -69,7 +69,7 @@ function owlCarouselParamName(paramName) {
         ITEMS: "items",
         ITEMSCUSTOM: "itemsCustom",
         ITEMSDESKTOP: "itemsDesktop",
-        ITEMSDESKTOSMALL: "itemsDesktopSmall",
+        ITEMSDESKTOPSMALL: "itemsDesktopSmall",
         ITEMSMOBILE: "itemsMobile",
         ITEMSSCALEUP: "itemsScaleUp",
         ITEMSTABLET: "itemsTablet",

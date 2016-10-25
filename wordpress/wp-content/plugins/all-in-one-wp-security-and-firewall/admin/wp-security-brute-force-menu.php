@@ -110,7 +110,7 @@ class AIOWPSecurity_Brute_Force_Menu extends AIOWPSecurity_Admin_Menu
                 if($aiowps_login_page_slug == 'wp-admin'){
                     $error .= '<br />'.__('You cannot use the value "wp-admin" for your login page slug.','all-in-one-wp-security-and-firewall');
                 }elseif(preg_match('/[^a-z_\-0-9]/i', $aiowps_login_page_slug)){
-                    $error .= '<br />'.__('You must alpha numeric characters for your login page slug.','all-in-one-wp-security-and-firewall');
+                    $error .= '<br />'.__('You must use alpha numeric characters for your login page slug.','all-in-one-wp-security-and-firewall');
                 }
             }
             
@@ -136,6 +136,16 @@ class AIOWPSecurity_Brute_Force_Menu extends AIOWPSecurity_Admin_Menu
                 else {
                     $this->show_msg_error(__('Could not delete the Cookie-based directives from the .htaccess file. Please check the file permissions.', 'all-in-one-wp-security-and-firewall'));
                 }
+                
+                /** The following is a fix/workaround for the following issue:
+                 * https://wordpress.org/support/topic/applying-brute-force-rename-login-page-not-working/
+                 * ie, when saving the rename login config, the logout link does not update on the first page load after the $_POST submit to reflect the new rename login setting.
+                 * Added a page refresh to fix this for now until I figure out a better solution.
+                 * 
+                **/
+                $cur_url = "admin.php?page=".AIOWPSEC_BRUTE_FORCE_MENU_SLUG."&tab=tab1";
+                AIOWPSecurity_Utility::redirect_to_url($cur_url);
+                
             }
         }
         
@@ -181,9 +191,11 @@ class AIOWPSecurity_Brute_Force_Menu extends AIOWPSecurity_Admin_Menu
         <form action="" method="POST">
         <?php wp_nonce_field('aiowpsec-rename-login-page-nonce'); ?>
         <div class="aio_orange_box">
-            <p>
-            <?php _e('This feature can lock you out of admin if it doesn\'t work correctly on your site. You <a href="https://www.tipsandtricks-hq.com/wordpress-security-and-firewall-plugin#advanced_features_note" target="_blank">must read this message</a> before activating this feature.', 'all-in-one-wp-security-and-firewall'); ?>
-            </p>
+            <?php
+            $read_link = '<a href="https://www.tipsandtricks-hq.com/wordpress-security-and-firewall-plugin#advanced_features_note" target="_blank">must read this message</a>';
+            echo '<p>'.sprintf(__('This feature can lock you out of admin if it doesn\'t work correctly on your site. You %s before activating this feature.', 'all-in-one-wp-security-and-firewall'), $read_link).'</p>';
+            echo '<p>'.__("NOTE: If you are hosting your site on WPEngine or a provider which performs server caching, you will need to ask the host support people to NOT cache your renamed login page.", "all-in-one-wp-security-and-firewall").'</p>';
+            ?>
         </div>
         <table class="form-table">
             <tr valign="top">
