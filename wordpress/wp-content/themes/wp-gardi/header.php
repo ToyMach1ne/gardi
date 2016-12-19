@@ -70,9 +70,14 @@
 
     </div>
     <form class="search" method="get" action="<?php echo home_url(); ?>" role="search">
-  <input class="search-input" type="search" name="s" placeholder="Поиск по сайту">
-  <button class="search-submit" type="submit" role="button"><?php _e( 'Поиск', 'wpeasy' ); ?></button>
-</form><!-- /search -->
+      <input class="search-input" type="search" name="s" placeholder="Поиск по сайту">
+      <button class="search-submit" type="submit" role="button"><?php _e( 'Поиск', 'wpeasy' ); ?></button>
+      <a href="#" class="super-button recall">Перезвоните мне</a>
+    </form><!-- /search -->
+    <div class="modal-form">
+      <?php echo do_shortcode('[contact-form-7 id="1421" title="modal form"]'); ?>
+    </div>
+
 
 </div>
 </div>

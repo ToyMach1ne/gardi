@@ -10,7 +10,8 @@
                                 </h2>
 
                                 <div class="plant-thumb-wrapper">
-                                <?php if (have_posts()): while (have_posts()) : the_post(); ?>
+                                <?php if (have_posts()): while (have_posts()) : the_post();
+                                array( 'order' => 'ASC' ); ?>
 
                             <h2 class="plant-thumb">
                             <a href="<?php the_permalink() ?>"><?php the_title(); ?>

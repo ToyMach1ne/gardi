@@ -656,8 +656,8 @@ add_action( 'init', 'post_type_product' );
 function post_type_product() {
 
   $labels = array(
-    'name' => 'product',
-    'singular_name' => 'product',
+    'name' => 'Продукт',
+    'singular_name' => 'Продукт',
     'add_new' => 'Add',
     'add_new_item' => 'Add',
     'edit' => 'Edit',
@@ -697,8 +697,8 @@ add_action( 'init', 'post_type_product_descr' );
 function post_type_product_descr() {
 
   $labels = array(
-    'name' => 'product_descr',
-    'singular_name' => 'product_descr',
+    'name' => 'Описание продукта',
+    'singular_name' => 'Описание продукта',
     'add_new' => 'Add',
     'add_new_item' => 'Add',
     'edit' => 'Edit',
@@ -738,8 +738,8 @@ add_action( 'init', 'taxonomies_category', 0 );
 function taxonomies_category() {
   // Add new taxonomy, make it hierarchical (like categories)
   $labels = array(
-    'name'              => 'Categories',
-    'singular_name'     => 'Category',
+    'name'              => 'Рубрика',
+    'singular_name'     => 'Рубрика',
     'search_items'      => 'Search',
     'all_items'         => 'All',
     'parent_item'       => 'Parent',

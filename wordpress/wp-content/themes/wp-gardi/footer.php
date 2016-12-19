@@ -23,7 +23,7 @@
                             </div>
                             <div class="border-separate"></div>
                             <div class="copyright-block">
-                                <p class="gardi-copyright">© 2016 Декоративные растения и цветы. Благоустройство территорий и городское озеленение</p>
+                                <p class="gardi-copyright">© 2016 Сад Лопатина. Питомник плодовых и декоративных деревьев и кустов в Винница. Декоративные растения и цветы, саженцы. Посадочный материал от производителя. Только саженцы выращенные в Украинском климате. Реёнированные растения от питомника с 40-ка летним стажем.</p>
                                 <div class="b-content__social-icons-wrapper margin-top10">
                                     <a href="https://vk.com/id137855179" target="_blank" rel="nofollow" class="b-social-link b-social-link_vk" title="Питомник растений в Вконтакте"></a>
 

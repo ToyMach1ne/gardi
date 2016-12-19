@@ -2,16 +2,11 @@
 <div id="demo">
         <div class="container">
           <div class="row">
-            <div class="span12 contact-slider">
-            <?php $images = get_field('contact_slider'); if( $images ): ?>
-              <div id="owl-demo" class="owlCarousel">
-              <?php $images = get_field('contact_slider'); if( $images ): foreach( $images as $image ): ?>
-
-                <div class="item"><img src="<?php echo $image['sizes']['large']; ?>" alt="<?php echo $image['alt']; ?>" /></div>
-                <?php endforeach; endif; ?>
+            <div class="col-md-12 span12 contact-slider">
+              <div class="contact-form">
+              <h1>Контактная форма</h1>
+                <?php echo do_shortcode('[contact-form-7 id="1422" title="contact-page"]'); ?>
               </div>
-              <span class="slider-descr"><?php the_content(); ?></span>
-              <?php endif; ?>
             </div>
           </div>
         </div>

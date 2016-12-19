@@ -22,3 +22,22 @@ if (typeof jQuery == 'undefined') {
 }
 // Place any jQuery/helper plugins in here.
 
+$('.super-button').on('click', function(event) {
+  var $navMenu = $('.modal-form');
+
+  if ($(this).hasClass('super-button-opened')) {
+    $navMenu.removeClass('modal-form-opened');
+    $(this).removeClass('super-button-opened')
+    $('.close-mobile-menu').removeClass('close-form--show')
+  } else {
+    $navMenu.addClass('modal-form-opened');
+    $(this).addClass('super-button-opened')
+    $('.close-form').addClass('close-form--show')
+  }
+})
+$('.close-form').on('click', function(event) {
+  $('.modal-form').removeClass('modal-form-opened');
+  $('.super-button').removeClass('super-button-opened')
+  $(this).removeClass('close-form--show')
+
+})

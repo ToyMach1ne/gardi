@@ -9,7 +9,8 @@
                                 <h2 class="green-italic-title">
                                 </h2>
                                 <div class="plant-thumb-wrapper">
-                                <?php if (have_posts()): while (have_posts()) : the_post(); ?>
+                                <?php $paged = ( get_query_var( 'paged' ) ) ? get_query_var( 'paged' ) : 1;
+query_posts($query_string . '&post_type=product&posts_per_page=100&orderby=title&order=asc&paged='.$paged); if(have_posts()) : while(have_posts()) : the_post(); ?>
 
                             <h2 class="plant-thumb">
                             <a href="<?php the_permalink() ?>"><?php the_title(); ?>
@@ -17,7 +18,8 @@
                                     <p><?php echo get_the_excerpt(); ?></p>
                             </h2>
                                     <?php endwhile;?>
-                                    <?php endif; ?>
+                                    <?php endif; wp_reset_query(); ?>
+
                                 </div>
                             </div>
                         </div>
