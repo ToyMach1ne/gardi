@@ -5837,16 +5837,25 @@ footer {
     }
     form {
       padding-bottom: 100px;
+      text-align: center;
       input {
-        font-size: 18px;
-
-        width: 300px;
         height: 30px;
+    border: 1px solid #a6ca48;
+    border-radius: 5px;
+    width: 310px;
+    padding: 5px;
+    margin-bottom: 15px;
+      }
+      .wpcf7-submit {
+        font-size: 18px;
+        width: 300px;
+        height: 40px;
         margin-bottom: 15px;
         padding: 10px;
-
+        background-color: #a6ca48;
         border: 1px solid #a6ca48;
         border-radius: 5px;
+        cursor:pointer;
         &:focus {
           border: none;
         }
@@ -5924,7 +5933,7 @@ footer {
     width: 400px;
     height: 400px;
     margin: 0 auto;
-
+    text-align: center;
     justify-content: center;
     align-items: center;
     padding-top: 70px;
@@ -5940,7 +5949,7 @@ footer {
       padding:5px;
       margin-bottom:15px;
     }
-    button {
+    .wpcf7-submit {
       width: 250px;
       height: 30px;
       background-color: #a6ca48;

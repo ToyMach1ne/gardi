@@ -16,10 +16,7 @@
                                 <a href="mailto:lopatinskii_sad@mail.ru" class="footer-email">lopatinskii_sad@mail.ru</a></span></p>
                             </div>
                             <div class="footer-column-small">
-                                <a href="" class="footer-link" title="Оранжерея цветочных растений">Питомник плодовых растений</a>
-                                <p itemprop="address" itemscope="" itemtype="http://schema.org/PostalAddress"> Винница, Украина</p>
-                                <p>Tел.: <span itemprop="telephone">+380 67 775 27 48</span></p>
-                                <p>Email: <span itemprop="email"><a href="mailto:lopatinskii_sad@mail.ru" class="footer-email">lopatinskii_sad@mail.ru</a></span></p>
+                                <a href="#" class="super-button recall">Перезвоните мне</a>
                             </div>
                             <div class="border-separate"></div>
                             <div class="copyright-block">
