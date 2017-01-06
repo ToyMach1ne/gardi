@@ -16,14 +16,11 @@
                                 <a href="mailto:lopatinskii_sad@mail.ru" class="footer-email">lopatinskii_sad@mail.ru</a></span></p>
                             </div>
                             <div class="footer-column-small">
-                                <a href="" class="footer-link" title="Оранжерея цветочных растений">Питомник плодовых растений</a>
-                                <p itemprop="address" itemscope="" itemtype="http://schema.org/PostalAddress"> Винница, Украина</p>
-                                <p>Tел.: <span itemprop="telephone">+380 67 775 27 48</span></p>
-                                <p>Email: <span itemprop="email"><a href="mailto:lopatinskii_sad@mail.ru" class="footer-email">lopatinskii_sad@mail.ru</a></span></p>
+                                <a href="#" class="super-button recall">Перезвоните мне</a>
                             </div>
                             <div class="border-separate"></div>
                             <div class="copyright-block">
-                                <p class="gardi-copyright">© 2016 Декоративные растения и цветы. Благоустройство территорий и городское озеленение</p>
+                                <p class="gardi-copyright">© 2016 Сад Лопатина. Питомник плодовых и декоративных деревьев и кустов в Винница. Декоративные растения и цветы, саженцы. Посадочный материал от производителя. Только саженцы выращенные в Украинском климате. Реёнированные растения от питомника с 40-ка летним стажем.</p>
                                 <div class="b-content__social-icons-wrapper margin-top10">
                                     <a href="https://vk.com/id137855179" target="_blank" rel="nofollow" class="b-social-link b-social-link_vk" title="Питомник растений в Вконтакте"></a>
 

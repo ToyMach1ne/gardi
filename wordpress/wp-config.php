@@ -2,7 +2,7 @@
 
 
 define('WP_CACHE', true); //Added by WP-Cache Manager
-define( 'WPCACHEHOME', '/home/p284179/www/sad-lopatina.org.ua/wp-content/plugins/wp-super-cache/' ); //Added by WP-Cache Manager
+define( 'WPCACHEHOME', 'D:\Work\work\lopatin.dev\wordpress\wp-content\plugins\wp-super-cache/' ); //Added by WP-Cache Manager
 define('DISABLE_WP_CRON', true);
 define('FS_METHOD', 'direct');
 
