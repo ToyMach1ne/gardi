@@ -11,7 +11,10 @@
 <div class="our-services-wrapper">
 <?php if ( has_post_thumbnail()) :?>
   <a class="single-thumb" href="<?php the_permalink(); ?>" title="<?php the_title(); ?>">
-      <?php the_post_thumbnail('thumbnail'); ?>
+            <?php  the_post_thumbnail('thumbnail');
+            else: ?>
+              <img src="<?php echo catchFirstImage(); ?>" title="<?php the_title(); ?>" alt="<?php the_title(); ?>" />
+
   </a>
     <?php endif; ?><!-- /post thumbnail -->
 <h2><?php the_title(); ?></h2>

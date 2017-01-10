@@ -5713,7 +5713,7 @@ footer {
 .span12.contact-slider {
   position: relative;
 
-  height: 610px;
+  height: 710px;
   margin-bottom: -24px;
   img {
     height: 610px; ;
@@ -5866,6 +5866,9 @@ footer {
         &:focus {
           border: none;
         }
+        &:hover {
+          background-color: darken(#a6ca48, 10%);
+        }
       }
       textarea {
         font-size: 18px;
@@ -5998,4 +6001,9 @@ footer {
 }
 .modal-form-opened {
   display: block;
+}
+.single {
+  iframe {
+    width: 100%;
+  }
 }
