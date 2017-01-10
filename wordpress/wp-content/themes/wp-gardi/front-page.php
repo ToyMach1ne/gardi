@@ -96,7 +96,7 @@
 
 
                                     <span class="offers-item-title"><?php the_title(); ?></span>
-                                    <span class="read-more-about-offer"><?php the_excerpt(); ?></span>
+                                    <span class="read-more-about-offer"><?php wpeExcerpt('wpeExcerpt10'); ?></span>
                                 </a>
                             </li>
 <?php endwhile; endif; ?>

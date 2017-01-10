@@ -16,7 +16,7 @@
                                 <a href="mailto:lopatinskii_sad@mail.ru" class="footer-email">lopatinskii_sad@mail.ru</a></span></p>
                             </div>
                             <div class="footer-column-small">
-                                <a href="#" class="super-button recall">Перезвоните мне</a>
+                                <a href="#" class="super-button recall footer-recall">Перезвоните мне</a>
                             </div>
                             <div class="border-separate"></div>
                             <div class="copyright-block">

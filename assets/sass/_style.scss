@@ -1428,7 +1428,8 @@ body {
   float: left;
 
   width: 250px;
-  height: 141px;
+  height: auto;
+  object-fit: cover;
   margin-right: 20px;
 
   border: 1px solid #e0e0e0;
@@ -4488,7 +4489,7 @@ html {
 
 .contact-info-gardi-thumb {
   float: left;
-
+  padding-top: 15px;
   width: 100%;
   margin-bottom: 10px;
 }
@@ -4503,9 +4504,6 @@ html {
   text-decoration: none;
 }
 
-.contact-info-gardi-thumb a:hover {
-  text-decoration: underline;
-}
 
 .gardi-thumb-description ul {
   float: left;
@@ -5649,7 +5647,15 @@ footer {
   .center-content-wrapper {
     img {
       width: 370px;
-      height: 250px;
+      height: auto;
+      top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    max-height: 100%;
+    max-width: 100%;
+    display: block;
+    margin: auto;
 
       border-radius: 6px;
     }
@@ -5856,6 +5862,7 @@ footer {
         border: 1px solid #a6ca48;
         border-radius: 5px;
         cursor:pointer;
+        margin-left: 20px;
         &:focus {
           border: none;
         }
@@ -5895,8 +5902,8 @@ footer {
   text-align: center;
   font-size: 16px;
   text-decoration: none;
-  line-height:2;
-  width: 300px;
+  line-height:2.2;
+  width: 250px;
   height: 35px;
 
   cursor: pointer;
@@ -5907,6 +5914,16 @@ footer {
   background-color: #a6ca48;
   &:hover {
     background-color: #8bad32;
+    text-decoration: none !important;
+    color:#fff !important;
+  }
+}
+.footer-recall {
+  width: 200px;
+  line-height:2.2;
+  &:hover {
+    text-decoration: none !important;
+    color:#fff !important;
   }
 }
 .modal-form {
@@ -5971,8 +5988,8 @@ footer {
     text-align: center;
     line-height: 2;
         position: absolute;
-    top: 130px;
-    right: 12%;
+    top: 125px;
+    right: 0;
       &:hover {
         text-decoration: none;
       }
